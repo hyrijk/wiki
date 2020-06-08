@@ -1,4 +1,5 @@
 
+
 # This is a basic workflow to help you get started with Actions
 
 name: CI
@@ -23,6 +24,9 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
 
+    - name: cp files
+      run: mkdir build && cp *.html build
+
     - name: Tencent Cloud COS Action
       uses: TencentCloud/cos-action@v1
       with:
@@ -35,7 +39,7 @@ jobs:
         # COS bucket region
         cos_region: ap-hongkong
         # Local path to be uploaded to COS. Directory or file is allowed
-        local_path: ./
+        local_path: build
         # COS path to put the local files in on COS
         remote_path: /
         # Set to true for cleaning files on COS path which are not existed in local path. Default is false
