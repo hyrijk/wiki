@@ -141,6 +141,10 @@ Error message and password prompt
 
 <p>This <a class="tc-tiddlylink-external" href="https://tiddlywiki.com" rel="noopener noreferrer" target="_blank">TiddlyWiki</a> contains the following tiddlers:</p><p><ul>
 
+<li>/usr/local/bin/iterm2-recv-zmodem.sh</li>
+
+<li>/usr/local/bin/iterm2-send-zmodem.sh</li>
+
 <li>$:/config/AutoSave</li>
 
 <li>$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/advanced-search</li>
@@ -273,7 +277,13 @@ Error message and password prompt
 
 <li>$:/state/toc/TableOfContents-前端--599274119</li>
 
+<li>$:/state/toc/TableOfContents-前端-1578220852</li>
+
 <li>$:/state/toc/TableOfContents-数据库--174201155</li>
+
+<li>$:/state/toc/TableOfContents-数据库-1578220852</li>
+
+<li>$:/state/toc/TableOfContents-mac-1578220852</li>
 
 <li>$:/state/toc/TableOfContents-nginx-1578220852</li>
 
@@ -507,6 +517,8 @@ Error message and password prompt
 
 <li>$:/view</li>
 
+<li>捕获所有异常</li>
+
 <li>前端</li>
 
 <li>数据库</li>
@@ -531,7 +543,11 @@ Error message and password prompt
 
 <li>Index</li>
 
+<li>item2 安装 rzsz</li>
+
 <li>jsdoc</li>
+
+<li>mac</li>
 
 <li>mongodb</li>
 
@@ -575,6 +591,67 @@ Error message and password prompt
 <!--~~ Ordinary tiddlers ~~-->
 
 <div id="storeArea" style="display:none;">
+<div created="20200614102212100" modified="20200614103848117" tags="" title="/usr/local/bin/iterm2-recv-zmodem.sh">
+<pre>```bash
+#!/bin/bash
+# Author: Matt Mastracci (matthew@mastracci.com)
+# AppleScript from http://stackoverflow.com/questions/4309087/cancel-button-on-osascript-in-a-bash-script
+# licensed under cc-wiki with attribution required 
+# Remainder of script public domain
+
+osascript -e 'tell application &quot;iTerm2&quot; to version' &gt; /dev/null 2&gt;&amp;1 &amp;&amp; NAME=iTerm2 || NAME=iTerm
+if [[ $NAME = &quot;iTerm&quot; ]]; then
+    FILE=`osascript -e 'tell application &quot;iTerm&quot; to activate' -e 'tell application &quot;iTerm&quot; to set thefile to choose folder with prompt &quot;Choose a folder to place received files in&quot;' -e &quot;do shell script (\&quot;echo \&quot;&amp;(quoted form of POSIX path of thefile as Unicode text)&amp;\&quot;\&quot;)&quot;`
+else
+    FILE=`osascript -e 'tell application &quot;iTerm2&quot; to activate' -e 'tell application &quot;iTerm2&quot; to set thefile to choose folder with prompt &quot;Choose a folder to place received files in&quot;' -e &quot;do shell script (\&quot;echo \&quot;&amp;(quoted form of POSIX path of thefile as Unicode text)&amp;\&quot;\&quot;)&quot;`
+fi
+
+if [[ $FILE = &quot;&quot; ]]; then
+    echo Cancelled.
+    # Send ZModem cancel
+    echo -e \\x18\\x18\\x18\\x18\\x18
+    sleep 1
+    echo
+    echo \# Cancelled transfer
+else
+    cd &quot;$FILE&quot;
+    /usr/local/bin/rz -E -e -b
+    sleep 1
+    echo
+    echo
+    echo \# Sent \-\&gt; $FILE
+fi
+```</pre>
+</div>
+<div created="20200614102252859" modified="20200614103904095" tags="" title="/usr/local/bin/iterm2-send-zmodem.sh">
+<pre>```bash
+#!/bin/bash
+# Author: Matt Mastracci (matthew@mastracci.com)
+# AppleScript from http://stackoverflow.com/questions/4309087/cancel-button-on-osascript-in-a-bash-script
+# licensed under cc-wiki with attribution required 
+# Remainder of script public domain
+
+osascript -e 'tell application &quot;iTerm2&quot; to version' &gt; /dev/null 2&gt;&amp;1 &amp;&amp; NAME=iTerm2 || NAME=iTerm
+if [[ $NAME = &quot;iTerm&quot; ]]; then
+    FILE=`osascript -e 'tell application &quot;iTerm&quot; to activate' -e 'tell application &quot;iTerm&quot; to set thefile to choose file with prompt &quot;Choose a file to send&quot;' -e &quot;do shell script (\&quot;echo \&quot;&amp;(quoted form of POSIX path of thefile as Unicode text)&amp;\&quot;\&quot;)&quot;`
+else
+    FILE=`osascript -e 'tell application &quot;iTerm2&quot; to activate' -e 'tell application &quot;iTerm2&quot; to set thefile to choose file with prompt &quot;Choose a file to send&quot;' -e &quot;do shell script (\&quot;echo \&quot;&amp;(quoted form of POSIX path of thefile as Unicode text)&amp;\&quot;\&quot;)&quot;`
+fi
+if [[ $FILE = &quot;&quot; ]]; then
+    echo Cancelled.
+    # Send ZModem cancel
+    echo -e \\x18\\x18\\x18\\x18\\x18
+    sleep 1
+    echo
+    echo \# Cancelled transfer
+else
+    /usr/local/bin/sz &quot;$FILE&quot; -e -b
+    sleep 1
+    echo
+    echo \# Received $FILE
+fi 
+```</pre>
+</div>
 <div created="20200613162604220" modified="20200613162604220" title="$:/config/AutoSave">
 <pre>no</pre>
 </div>
@@ -14161,7 +14238,7 @@ Error message and password prompt
 <div created="20200607043853954" modified="20200607075242372" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/All</pre>
 </div>
-<div created="20200607035320825" modified="20200613163939719" title="$:/state/tab/sidebar--595412856">
+<div created="20200607035320825" modified="20200614104109253" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/Recent</pre>
 </div>
 <div created="20200607051544172" modified="20200607051711963" title="$:/state/toc/TableOfContents-目录--599274119">
@@ -14173,10 +14250,19 @@ Error message and password prompt
 <div created="20200607075103370" modified="20200607075106129" title="$:/state/toc/TableOfContents-前端--599274119">
 <pre>close</pre>
 </div>
+<div created="20200614104035624" modified="20200614104036315" title="$:/state/toc/TableOfContents-前端-1578220852">
+<pre>close</pre>
+</div>
 <div created="20200607081846130" modified="20200607081852973" title="$:/state/toc/TableOfContents-数据库--174201155">
 <pre>close</pre>
 </div>
-<div created="20200609232047064" modified="20200609232048454" title="$:/state/toc/TableOfContents-nginx-1578220852">
+<div created="20200614104034276" modified="20200614104034916" title="$:/state/toc/TableOfContents-数据库-1578220852">
+<pre>close</pre>
+</div>
+<div created="20200614104058584" modified="20200614104059145" title="$:/state/toc/TableOfContents-mac-1578220852">
+<pre>close</pre>
+</div>
+<div created="20200609232047064" modified="20200614104033272" title="$:/state/toc/TableOfContents-nginx-1578220852">
 <pre>close</pre>
 </div>
 <div created="20200607081846943" modified="20200607081849593" title="$:/state/toc/TableOfContents-ssh--174201155">
@@ -14188,7 +14274,7 @@ Error message and password prompt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div list="" title="$:/StoryList">
+<div created="20200614104042699" list="[[item2 安装 rzsz]]" modified="20200614104251712" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200607063942744" modified="20200607070244679" title="$:/temp/advancedsearch">
@@ -14255,7 +14341,7 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div created="20200607043129550" modified="20200613163153123" title="$:/temp/NewTagName">
+<div created="20200607043129550" modified="20200614102009910" title="$:/temp/NewTagName">
 <pre></pre>
 </div>
 <div author="Paco Rivière" core-version="&gt;=5.0.0" created="20200607034009050" dependents="" description="Catalan (Spain)" icon="data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22810%22%20height%3D%22540%22%3E%0A%3Crect%20width%3D%22810%22%20height%3D%22540%22%20fill%3D%22%23FCDD09%22%2F%3E%0A%3Cpath%20stroke%3D%22%23DA121A%22%20stroke-width%3D%2260%22%20d%3D%22M0%2C90H810m0%2C120H0m0%2C120H810m0%2C120H0%22%2F%3E%0A%3C%2Fsvg%3E" modified="20200607034009050" name="ca-ES" original-plugin-type="language" original-tags="" original-title="$:/languages/ca-ES" original-type="application/json" requires-reload="no" server-url="https://tiddlywiki.com/library/v5.1.22/index.html" tags="$:/tags/RemoteAssetInfo" title="$:/temp/RemoteAssetInfo/https://tiddlywiki.com/library/v5.1.22/index.html/$:/languages/ca-ES" type="text/vnd.tiddlywiki" version="5.1.22">
@@ -15332,6 +15418,16 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div created="20200607040751291" modified="20200607074731252" title="$:/view">
 <pre>classic</pre>
 </div>
+<div created="20200614094530530" modified="20200614094707169" tags="python error" title="捕获所有异常">
+<pre>```python
+try:
+   ...
+except Exception as e:
+   ...
+   log('Reason:', e)       # Important!
+```
+这个将会捕获除了 `SystemExit` 、 `KeyboardInterrupt` 和 `GeneratorExit` 之外的所有异常。如果你还想捕获这三个异常，将 `Exception` 改成 `BaseException` 即可。</pre>
+</div>
 <div created="20200607074817422" modified="20200607075054651" tags="TableOfContents" title="前端">
 <pre>&lt;&lt;list-links &quot;[tag[前端]]&quot;&gt;&gt;</pre>
 </div>
@@ -15510,6 +15606,30 @@ git rebase --onto HEAD HEAD master
 
 &lt;/div&gt;</pre>
 </div>
+<div created="20200614101333531" modified="20200614105003812" tags="ssh mac" title="item2 安装 rzsz" type="text/vnd.tiddlywiki">
+<pre>! lrzsz 安装
+```bash
+brew install lrzsz
+vim /usr/local/bin/iterm2-recv-zmodem.sh
+vim /usr/local/bin/iterm2-send-zmodem.sh
+chmod +x /usr/local/bin/iterm2-*
+```
+* [[/usr/local/bin/iterm2-recv-zmodem.sh]]
+
+* [[/usr/local/bin/iterm2-send-zmodem.sh]]
+! item2 配置
+```
+Regular expression: rz waiting to receive.\*\*B0100000063f694
+Action: Run Silent Coprocess
+Parameters: /usr/local/bin/iterm2-send-zmodem.sh
+
+Regular expression: \*\*B00000000000000
+Action: Run Silent Coprocess
+Parameters: /usr/local/bin/iterm2-recv-zmodem.sh
+```
+[img[https://blog-1251760823.cos.ap-guangzhou.myqcloud.com/img/20200614183008.png]]
+  </pre>
+</div>
 <div created="20200607075347511" modified="20200607080523362" tags="前端 文档" title="jsdoc" type="text/x-markdown">
 <pre>https://jsdoc.app/tags-param.html
 
@@ -15528,6 +15648,9 @@ Project.prototype.assign = function({ name, department }) {
 ```
 
 </pre>
+</div>
+<div created="20200614104055791" modified="20200614104055791" tags="TableOfContents" title="mac">
+<pre></pre>
 </div>
 <div created="20200607075431855" modified="20200607080544867" tags="数据库" title="mongodb" type="text/x-markdown">
 <pre># 数据导入
