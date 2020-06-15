@@ -531,6 +531,8 @@ Error message and password prompt
 
 <li>anki 添加笔记类型</li>
 
+<li>createTaskTiddler</li>
+
 <li>css</li>
 
 <li>docker</li>
@@ -14240,8 +14242,8 @@ fi
 <div created="20200607043853954" modified="20200607075242372" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/All</pre>
 </div>
-<div created="20200607035320825" modified="20200614105102153" title="$:/state/tab/sidebar--595412856">
-<pre>$:/core/ui/SideBar/Recent</pre>
+<div created="20200607035320825" modified="20200615013411568" title="$:/state/tab/sidebar--595412856">
+<pre>$:/core/ui/SideBar/Open</pre>
 </div>
 <div created="20200607051544172" modified="20200607051711963" title="$:/state/toc/TableOfContents-目录--599274119">
 <pre>close</pre>
@@ -14276,7 +14278,7 @@ fi
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20200614104042699" list="新建TeleGram机器人" modified="20200614105038218" title="$:/StoryList">
+<div created="20200615013344082" list="createTaskTiddler" modified="20200615013344082" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200607063942744" modified="20200607070244679" title="$:/temp/advancedsearch">
@@ -14330,11 +14332,11 @@ fi
         },
         &quot;$:/info/browser/screen/width&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/width&quot;,
-            &quot;text&quot;: &quot;1920&quot;
+            &quot;text&quot;: &quot;1792&quot;
         },
         &quot;$:/info/browser/screen/height&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/height&quot;,
-            &quot;text&quot;: &quot;1080&quot;
+            &quot;text&quot;: &quot;1120&quot;
         },
         &quot;$:/info/browser/language&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/language&quot;,
@@ -14343,7 +14345,7 @@ fi
     }
 }</pre>
 </div>
-<div created="20200607043129550" modified="20200614105507557" title="$:/temp/NewTagName">
+<div created="20200607043129550" modified="20200615014057158" title="$:/temp/NewTagName">
 <pre></pre>
 </div>
 <div author="Paco Rivière" core-version="&gt;=5.0.0" created="20200607034009050" dependents="" description="Catalan (Spain)" icon="data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22810%22%20height%3D%22540%22%3E%0A%3Crect%20width%3D%22810%22%20height%3D%22540%22%20fill%3D%22%23FCDD09%22%2F%3E%0A%3Cpath%20stroke%3D%22%23DA121A%22%20stroke-width%3D%2260%22%20d%3D%22M0%2C90H810m0%2C120H0m0%2C120H810m0%2C120H0%22%2F%3E%0A%3C%2Fsvg%3E" modified="20200607034009050" name="ca-ES" original-plugin-type="language" original-tags="" original-title="$:/languages/ca-ES" original-type="application/json" requires-reload="no" server-url="https://tiddlywiki.com/library/v5.1.22/index.html" tags="$:/tags/RemoteAssetInfo" title="$:/temp/RemoteAssetInfo/https://tiddlywiki.com/library/v5.1.22/index.html/$:/languages/ca-ES" type="text/vnd.tiddlywiki" version="5.1.22">
@@ -15472,6 +15474,19 @@ https://cloud.tencent.com/document/product/876
 可通过 anki 的菜单”工具-&gt;管理笔记类型”添加新的笔记类型。然后点击右边的“字段...”管理笔记类型的字段
 
 [img [https://blog-1251760823.cos.ap-guangzhou.myqcloud.com/img/20200614000805.png]] </pre>
+</div>
+<div created="20200615013828151" modified="20200615014123812" tags="snippet tiddlywiki" title="createTaskTiddler">
+<pre>```
+\define createTagTiddler()
+&lt;$action-createtiddler $basetitle={{$:/state/new-button-caption}}  tags=&quot;$(currentTiddler)$ task&quot;/&gt;
+\end
+
+&lt;$edit-text tiddler=&quot;$:/state/new-button-caption&quot; tag=&quot;input&quot; default=&quot;&quot;/&gt;
+&lt;$button&gt;
+&lt;&lt;createTagTiddler&gt;&gt;
+New task
+&lt;/$button&gt;
+```</pre>
 </div>
 <div created="20200607074756509" modified="20200607074814092" tags="前端" title="css" type="text/x-markdown">
 <pre>### 排除最后一个元素
