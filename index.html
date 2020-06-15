@@ -289,6 +289,8 @@ Error message and password prompt
 
 <li>$:/state/toc/TableOfContents-ssh--174201155</li>
 
+<li>$:/state/toc/TableOfContents-ssh-1578220852</li>
+
 <li>$:/state/toc/TableOfContents/前端-npm-1578220852</li>
 
 <li>$:/state/tree/$:/tags/</li>
@@ -574,6 +576,8 @@ Error message and password prompt
 <li>react</li>
 
 <li>sentry multiple client</li>
+
+<li>shell 重定向</li>
 
 <li>ssh</li>
 
@@ -14260,8 +14264,8 @@ fi
 <div created="20200607075103370" modified="20200607075106129" title="$:/state/toc/TableOfContents-前端--599274119">
 <pre>close</pre>
 </div>
-<div created="20200614104035624" modified="20200615073744361" title="$:/state/toc/TableOfContents-前端-1578220852">
-<pre>open</pre>
+<div created="20200614104035624" modified="20200615231313764" title="$:/state/toc/TableOfContents-前端-1578220852">
+<pre>close</pre>
 </div>
 <div created="20200607081846130" modified="20200607081852973" title="$:/state/toc/TableOfContents-数据库--174201155">
 <pre>close</pre>
@@ -14278,7 +14282,10 @@ fi
 <div created="20200607081846943" modified="20200607081849593" title="$:/state/toc/TableOfContents-ssh--174201155">
 <pre>close</pre>
 </div>
-<div created="20200615073746191" modified="20200615073747526" title="$:/state/toc/TableOfContents/前端-npm-1578220852">
+<div created="20200615231304844" modified="20200615231305570" title="$:/state/toc/TableOfContents-ssh-1578220852">
+<pre>close</pre>
+</div>
+<div created="20200615073746191" modified="20200615231312478" title="$:/state/toc/TableOfContents/前端-npm-1578220852">
 <pre>close</pre>
 </div>
 <div created="20200607060247349" modified="20200607060247349" title="$:/state/tree/$:/tags/">
@@ -14287,7 +14294,7 @@ fi
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div list="peerDependencies Tags" title="$:/StoryList">
+<div list="[[shell 重定向]] Tags" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200607063942744" modified="20200607070244679" title="$:/temp/advancedsearch">
@@ -14341,11 +14348,11 @@ fi
         },
         &quot;$:/info/browser/screen/width&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/width&quot;,
-            &quot;text&quot;: &quot;1792&quot;
+            &quot;text&quot;: &quot;1920&quot;
         },
         &quot;$:/info/browser/screen/height&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/height&quot;,
-            &quot;text&quot;: &quot;1120&quot;
+            &quot;text&quot;: &quot;1080&quot;
         },
         &quot;$:/info/browser/language&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/language&quot;,
@@ -14354,7 +14361,7 @@ fi
     }
 }</pre>
 </div>
-<div created="20200607043129550" modified="20200615073737505" title="$:/temp/NewTagName">
+<div created="20200607043129550" modified="20200615231322795" title="$:/temp/NewTagName">
 <pre></pre>
 </div>
 <div author="Paco Rivière" core-version="&gt;=5.0.0" created="20200607034009050" dependents="" description="Catalan (Spain)" icon="data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22810%22%20height%3D%22540%22%3E%0A%3Crect%20width%3D%22810%22%20height%3D%22540%22%20fill%3D%22%23FCDD09%22%2F%3E%0A%3Cpath%20stroke%3D%22%23DA121A%22%20stroke-width%3D%2260%22%20d%3D%22M0%2C90H810m0%2C120H0m0%2C120H810m0%2C120H0%22%2F%3E%0A%3C%2Fsvg%3E" modified="20200607034009050" name="ca-ES" original-plugin-type="language" original-tags="" original-title="$:/languages/ca-ES" original-type="application/json" requires-reload="no" server-url="https://tiddlywiki.com/library/v5.1.22/index.html" tags="$:/tags/RemoteAssetInfo" title="$:/temp/RemoteAssetInfo/https://tiddlywiki.com/library/v5.1.22/index.html/$:/languages/ca-ES" type="text/vnd.tiddlywiki" version="5.1.22">
@@ -15861,6 +15868,15 @@ $ npm publish --tag beta
 </div>
 <div created="20200615030623807" modified="20200615030710761" tags="sentry error" title="sentry multiple client">
 <pre>https://codesandbox.io/s/l7qrkjn7nm</pre>
+</div>
+<div created="20200615231231497" modified="20200615231505864" tags="linux" title="shell 重定向">
+<pre>在shell脚本中，默认情况下，总是有三个文件处于打开状态，标准输入(键盘输入)、标准输出（输出到屏幕）、标准错误（也是输出到屏幕），它们分别对应的文件描述符是`0`，`1`，`2`。
+
+`&gt;` 默认为标准输出重定向，与 `1&gt;` 相同
+
+`2&gt;&amp;1`  意思是把 标准错误输出 重定向到 标准输出.
+
+`&amp;&gt;file`  意思是把标准输出 和 标准错误输出 都重定向到文件file中</pre>
 </div>
 <div created="20200607075946523" modified="20200607081217714" tags="TableOfContents" title="ssh" type="text/x-markdown">
 <pre># Unset ProxyCommand
