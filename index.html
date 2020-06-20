@@ -52,6 +52,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE." />
 
 <!--~~ Raw markup ~~-->
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@4/distr/fira_code.css">
 
 
 </head>
@@ -212,6 +213,10 @@ Error message and password prompt
 <li>$:/languages/zh-Hans</li>
 
 <li>$:/palette</li>
+
+<li>$:/plugins/bimlas/locator</li>
+
+<li>$:/plugins/linonetwo/opened-tiddlers-bar</li>
 
 <li>$:/plugins/tiddlywiki/codemirror-mode-markdown</li>
 
@@ -512,6 +517,8 @@ Error message and password prompt
 <li>$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.22/index.html</li>
 
 <li>$:/theme</li>
+
+<li>$:/themes/linonetwo/itonnote</li>
 
 <li>$:/themes/tiddlywiki/snowwhite</li>
 
@@ -10128,24 +10135,9 @@ fi
 <div status="complete" title="$:/Import">
 <pre>下列条目已被导入：
 
-# [[linux.md]]
-# [[npm.md]]
-# [[git.md]]
-# [[vim.md]]
-# [[mongodb.md]]
-# [[docker.md]]
-# [[nginx.md]]
-# [[jsdoc.md]]
-# [[html.md]]
-# [[mysql.md]]
-# [[js.md]]
-# [[ssh.md]]
-# [[typescript.md]]
-# [[eslint.md]]
-# [[nodejs.md]]
-# [[vue.md]]
-# [[css.md]]
-# [[react.md]]</pre>
+# [[$:/plugins/linonetwo/opened-tiddlers-bar]]
+# [[$:/plugins/bimlas/locator]]
+# [[$:/themes/linonetwo/itonnote]]</pre>
 </div>
 <div created="20200607044533878" modified="20200607044536738" title="$:/Import!!popup-云开发.md">
 <pre>no</pre>
@@ -13889,8 +13881,528 @@ fi
     }
 }</pre>
 </div>
-<div created="20200610142222040" modified="20200610142222040" title="$:/palette">
-<pre>$:/palettes/Blanca</pre>
+<div created="20200610142222040" modified="20200620153610140" title="$:/palette">
+<pre>$:/palettes/Vanilla</pre>
+</div>
+<div author="bimlas" core-version="&gt;=5.1.18" dependents="" description="Locator: Discover and search by context" list="README/README README/macros README/TIPS README/CHANGELOG" plugin-type="plugin" source="https://gitlab.com/bimlas/tw5-locator" title="$:/plugins/bimlas/locator" type="application/json" version="2.0.0">
+<pre>{
+    &quot;tiddlers&quot;: {
+        &quot;$:/plugins/bimlas/locator/README/CHANGELOG&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/bimlas/locator/README/CHANGELOG&quot;,
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;Unreleased\n\n[[See GitLab for detailed change history of this release|https://gitlab.com/bimlas/tw5-locator/compare/master...dev]]\n\n!! 2.0.0\n\n[[See GitLab for detailed change history of this release|https://gitlab.com/bimlas/tw5-locator/compare/v1.5.0...v2.0.0]]\n\n''ALMOST COMPLETE REWRITING, BACKWARDS INCOMPATIBLE CHANGES ARE INTRODUCED''\n\n* ''It does not require the `kin` filter operator at all''\n* ''You can filter to any field besides the tags''\n* You can use the standard search from any `locator-view`\n* You can use any field to link tiddlers (as \&quot;tags\&quot;)\n* You can also navigate through tiddler links\n* You can use arbitrary templates to display context items and field values\n* ''INCOMPATIBLE CHANGES''&lt;br /&gt;//Before upgrading to the new version, make a backup (as before upgrading any plugin) and make the following changes.//\n** Renamed `locator-tags` to `locator-fields`&lt;br /&gt;//Change the macro call in your tiddlers//\n** `locator-view` does not supporting `finalFilter` and `tagFilter`&lt;br /&gt;//Remove them from your macrocalls//\n** Removed `filter-grandchildren` filter&lt;br /&gt;//Because it can no longer be passed through parameters.//\n** The \&quot;Open in Locator sidebar\&quot; toolbar button is moved from `$:/plugins/bimlas/locator/viewtemplate/open-in-sidebar` to `$:/plugins/bimlas/locator/viewtemplate/open-in-sidebar` and its code is changed as well&lt;br /&gt;//Compare the old tiddler with the shadow and note the changes if any. Transfer them to the new tiddler and delete the old tiddler.//\n\n!! 1.5.0\n\n[[See GitLab for detailed change history of this release|https://gitlab.com/bimlas/tw5-locator/compare/v1.4.0...v1.5.0]]\n\n* Move tiddler from current context to higher- or subtopic by drag-n-dropping in the Locator sidebar\n* Assign any tiddler to any of the titles in the Locator sidebar by drag-n-dropping\n* Show the (top-level) base tag to be able to move the tiddler titles there\n* Add button to open search results in advanced search\n* Show buttons using the Kin filter only when the filter operator is available\n* Fix related tag issue (not all of them were listed)\n* Fix whitespace issue\n* Refactor the code\n* Add tutorial to the demo\n\n!! 1.4.0\n\n[[See GitLab for detailed change history of this release|https://gitlab.com/bimlas/tw5-locator/compare/v1.3.1...v1.4.0]]\n\n* When there was a space in the search string and \&quot;new tiddler\&quot; button is used from search, the tiddler title was encapsulated (`[[title with spaces]]`)\n* When there was a space in any of the breadcrumbs in sidebar and \&quot;new tiddler\&quot; button is used from it, the tiddler got all of the breadcrumb tags, the title with spaces was encapsulated (literally `[[title with spaces]]` tag)\n* Add more tips to [[$:/plugins/bimlas/locator/README/TIPS]]\n* Add descriptive tooltip to buttons\n\n!! 1.3.1\n\n[[See GitLab for detailed change history of this release|https://gitlab.com/bimlas/tw5-locator/compare/v1.3.0...v1.3.1]]\n\n* Add base tag if there is no breadcrumbs when creating new tiddler in current context\n* Reword documentation\n\n!! 1.3.0\n\n[[See GitLab for detailed change history of this release|https://gitlab.com/bimlas/tw5-locator/compare/v1.2.0...v1.3.0]]\n\n* Create new tiddler from search text\n\n!! 1.2.0\n\n[[See GitLab for detailed change history of this release|https://gitlab.com/bimlas/tw5-locator/compare/v1.1.0...v1.2.0]]\n\n* Add button to create new tiddler in current context\n* Ability to use additional filter on tags\n\n!! 1.1.0\n\n[[See GitLab for detailed change history of this release|https://gitlab.com/bimlas/tw5-locator/compare/v1.0.0...v1.1.0]]\n\n* ''I realized that most functions work without the `kin` filter''\n* Use the same \&quot;style\&quot; for breadcrumb- and list items\n* Show real tags instead of tag pills\n* Turn off filter of direct tag in the breadcrumbs by its tag icon\n* Ancestor tags in breadcrumbs of search are operating like direct labels, they can be removed one by one\n\n!! 1.0.0\n\n* First public release\n&quot;
+        },
+        &quot;$:/plugins/bimlas/locator/README/README&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/bimlas/locator/README/README&quot;,
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;! Locator\n\nLocator provides ''a universal interface for navigating between your tiddlers and searching, filtering them'' without the need to write [[filter expressions|https://tiddlywiki.com/#Filters]]. The plugin contains ''a table of contents widget and an enhanced search engine'' that contains a ''visual filter builder to filter results by tags and field values''. You can ''organize the tiddlers to any number of trees, even by custom fields or links in text''. Unlike [[classic Table of Contents|https://tiddlywiki.com/#Table-of-Contents%20Macros%20(Examples)]], [[standard search|$:/core/ui/AdvancedSearch/Standard]], [[filter search|$:/core/ui/AdvancedSearch/Filter]] and [[list of tags|$:/core/ui/MoreSideBar/Tags]], this plugin handles these functions organically.\n\n* https://bimlas.gitlab.io/tw5-locator (demo + install)\n* https://gitlab.com/bimlas/tw5-locator (main repository)\n* https://github.com/bimlas/tw5-locator (mirror, ''please star if you like the plugin'')\n\n! Benefits compared to built-in solutions\n\n* ''Shows field values''&lt;br/&gt;You can mark a tiddler with multiple tags and field values, but in the classic ToC you don't see them while browsing, in Locator you can apply them as filters.\n* ''Easy way to search for field values''&lt;br/&gt;Find tags, field values in the standard search based on part of their name or view the all fields of the search results at a glance.\n* ''Limit the scope of search''&lt;br/&gt;You don't have to store your recipes and family tree in a separate wiki just to make them easier to find: you can define the scope of your search with some clicks (without the need to write filters in [[$:/AdvancedSearch]]).\n* ''Reorder the hierarchy with drag-n-drop''&lt;br /&gt;You can easily move tiddlers between topics by drag-n-dropping them.\n* ''Create mindmaps''&lt;br /&gt;You can associate tiddlers with any field other than the tag, so you can create complex graphs that you can browse through text only user interface.\n* ''There is no need to include a table of contents in the main tiddler of each topic''&lt;br/&gt;Just press the \&quot;Locator sidebar\&quot; button on the tiddler's toolbar and you can browse it's children, links right away in the sidebar.\n* ''Create new tiddler in current scope''&lt;br /&gt;The \&quot;new tiddler\&quot; button in Locator creates a new tiddler pre-filled with the currently selected field values and named by the search query (like a special \&quot;new here\&quot; button).\n* ''Phone friendlier''&lt;br/&gt;The width of the classic ToC is increasing and the size of the text is decrasing as we move down in the context, while Locator remains readable.\n\n! Usage\n\nSee the [[demo|https://bimlas.gitlab.io/tw5-locator]] for a complete tutorial\n\n! Installation instructions\n\n''The plugin consists of separate parts'', each of them can be used on its own, so ''it is possible to use only the parts you like'', but they can be used most effectively together because ''they interact with each other''.\n\nTo add the plugin to your own ~TiddlyWiki5, just drag this link to the browser window and ''create or drag the required tiddlers from the demo'':\n\n$:/plugins/bimlas/locator\n\nFor other installation options see the links above.\n\n//Select the next tab to continue.//\n&quot;
+        },
+        &quot;$:/plugins/bimlas/locator/README/TIPS&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/bimlas/locator/README/TIPS&quot;,
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;! Tips\n\n!! Organic navigation\n\n* In `locator-fields`, look for a tag and apply it recursively; the `locator-search` only affects tiddlers associated with it at any depth\n* Click on the tag in `locator-fields` and open its tiddler, then click on the \&quot;locator sidebar\&quot; button; the `locator-view` sidebar will show it's hierarchy\n* Navigate in the hierarchy in `locator-view` sidebar then search for a term in `locator-search`; pressing the \&quot;search in context\&quot; button restricting the search to the context of `locator-view` sidebar\n* If you cannot find what you are searching for, then you may want to create a new tiddler, use the \&quot;new tiddler\&quot; button in one of the Locator macros\n\n!! Taking good habits\n\n''To get the least chance of writing the same note you wrote earlier, look for a new tiddler before creating a note. To force yourself'', hide the \&quot;new tiddler\&quot; button inside the Page Toolbar and ''use the \&quot;new tiddler\&quot; button inside the Locator search'', so if you want to create a new tiddler you must first look for it. If you are absolutely sure that there is no tiddler yet and you need to create a new tiddler, this solution is also useful because search text defines the default name of the new tiddler.\n\n!! Let the \&quot;Locator sidebar\&quot; button automatically focus to the Locator sidebar\n\nFor example, the More -&gt; Tags sidebar is currently open when we use the \&quot;Locator sidebar\&quot; toolbar button on one of the tiddlers, but we do not see the effect because the Locator sidebar is not visible, thus we need to modify to let button automatically open the corresponding sidebar.\n\n* If we don't know exactly, look for the sidebar tiddler's title (used as `text` parameter in the code below)\n** Open the Advanced Search -&gt; Filter and look for the sidebar name in the `caption` field, for example `[caption[Locator]]` will result [[Locator view]]\n* Find the state tiddler that contains the sidebar tiddler's title (used as `$tiddler` parameter in the code below)\n** Open the Advanced Search -&gt; Filter and look for `[text[Locator view]]` for example\n** Switch between Locator sidebar and another sidebar to see which state tiddler is changing, this is what we are looking for ([[$:/state/tab/sidebar--595412856]] for example)\n* Use the name of the state tiddler and the title of the sidebar in the code below and add this line to [[$:/plugins/bimlas/locator/viewtemplate/open-in-sidebar]] tiddler\n\n```\n&lt;!-- Original code of the button... --&gt;\n...\n&lt;$button tooltip=\&quot;Browse hierarchy of tag in Locator sidebar\&quot; aria-label=\&quot;locator sidebar\&quot; class=&lt;&lt;tv-config-toolbar-class&gt;&gt;&gt;\n&lt;!-- ADD THIS LINE --&gt;\n&lt;$action-setfield $tiddler=\&quot;$:/state/tab/sidebar--595412856\&quot; text=\&quot;Locator view\&quot;/&gt;\n```\n\nIf you rename the sidebar, you must also update this change! See [[this thread on Google Groups|https://groups.google.com/d/msg/tiddlywiki/xAe_fvhzoCY/UoKZc7ZZDQAJ]] for details.\n\n!! Speed up (on phones)\n\n!!! Conditional view\n\nBecause we don't look at the table of contents and search results at the same time, we can ''hide the Locator while we are using the standard search''.\n\nTo achieve this, place the Locator view in the following condition:\n\n```\n&lt;$reveal type=\&quot;match\&quot; default=\&quot;\&quot; text={{{ [prefix[$:/state/popup/search-dropdown]] }}}&gt;\n  &lt;&lt;locator-view baseTitle:\&quot;TableOfContents\&quot;&gt;&gt;\n&lt;/$reveal&gt;\n```\n\n''When you open TiddlyWiki'', the search entry is in focus by default, so ''the Locator sidebar is not visible''. To fix this, change the text of [[$:/config/Search/AutoFocus]] [[hidden setting|https://tiddlywiki.com/#Hidden%20Setting%3A%20Search%20AutoFocus]] to `false`.\n\n//Select the next tab to continue.//\n&quot;
+        },
+        &quot;$:/plugins/bimlas/locator/README/macros&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/bimlas/locator/README/macros&quot;,
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;! Usage of the macros\n\n!! `locator-view`\n\nThis is ''a [[Table of Contents macro|https://tiddlywiki.com/#Table-of-Contents%20Macros%20(Examples)]] that lets you navigate the wiki'' just as you would with a file manager on the file system. The macro can be placed anywhere you want, for example put it in the sidebar.\n\n* Create a new tiddler\n* Add the [[$:/tags/SideBar]] tag\n* Add the `caption` field to change the title of the tab (\&quot;Contents\&quot; for example)\n* Call the macro by placing this text in the tiddler:\n\n```\n&lt;&lt;locator-view baseTitle:\&quot;TableOfContents\&quot;&gt;&gt;\n```\n\nOptional parameters:\n\n; `fieldOfRelationship` (`tags` by default)\n: The default field which the tree is based on.\n\n; `templateOfContextItems` (`$:/plugins/bimlas/locator/field-templates/link` by default)\n: The default template to display the context items with.\n\n!! `locator-search` and `locator-fields`\n\nThe `locator-search` macro can be used in the same way as standard search, but ''you can narrow the scope of the search to the context by the fields filter'', in `locator-fields` you can `search for field values`.\n\n* Create a new tiddler\n* Add the [[$:/tags/SearchResults]] tag\n* Add the `caption` field to change the title of the tab (\&quot;Locator\&quot; for example)\n* Call the macro by placing this text in the tiddler:\n\n```\n&lt;&lt;locator-search&gt;&gt;\n```\n\nDo the same with `&lt;&lt;locator-fields&gt;&gt;` macro.\n\nIf you want to use `locator-fields` in the sidebar (like the sidebar -&gt; More -&gt; Tags tab) insted of standard search, you should also define the `searchTiddler` variable before the macro call:\n\n* Create a new tiddler\n* Add the [[$:/tags/SideBar]] tag\n* Add the `caption` field to change the title of the tab (\&quot;Fields\&quot; for example)\n* Call the macro by placing this text in the tiddler:\n\n```\n&lt;$vars searchTiddler=\&quot; \&quot;&gt;\n  &lt;&lt;locator-fields&gt;&gt;\n&lt;/$vars&gt;\n```\n\n//Select the next tab to continue.//\n&quot;
+        },
+        &quot;$:/plugins/bimlas/locator/actions/add-field-value&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/bimlas/locator/actions/add-field-value&quot;,
+            &quot;tags&quot;: &quot;$:/tags/Actions&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;\\define assign-value()\n  &lt;$action-setfield $tiddler=&lt;&lt;actionTiddler&gt;&gt; $field=&lt;&lt;currentField&gt;&gt; $value=&lt;&lt;currentTiddler&gt;&gt;/&gt;\n\\end\n\n\\define assign-list-item()\n  &lt;$action-listops $tiddler=&lt;&lt;actionTiddler&gt;&gt; $field=&lt;&lt;currentField&gt;&gt; $subfilter=\&quot;[all[current]]\&quot;/&gt;\n\\end\n\n&lt;$list filter=\&quot;[title&lt;currentField&gt;subfilter&lt;filter-field-is-list&gt;]\&quot; emptyMessage=&lt;&lt;assign-value&gt;&gt; variable=\&quot;null\&quot;&gt;\n  &lt;&lt;assign-list-item&gt;&gt;\n&lt;/$list&gt;\n&quot;
+        },
+        &quot;$:/plugins/bimlas/locator/actions/add-to-history&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/bimlas/locator/actions/add-to-history&quot;,
+            &quot;tags&quot;: &quot;$:/tags/Actions&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;&lt;$action-listops $tiddler=&lt;&lt;contextState&gt;&gt; $field=\&quot;history\&quot; $subfilter=\&quot;[all[current]]\&quot;/&gt;\n{{$:/plugins/bimlas/locator/actions/remove-filters}}\n&quot;
+        },
+        &quot;$:/plugins/bimlas/locator/actions/move-to-another-context&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/bimlas/locator/actions/move-to-another-context&quot;,
+            &quot;tags&quot;: &quot;$:/tags/Actions&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;\\define add-action-tiddler-to-current-tiddler()\n  &lt;$tiddler tiddler={{{ [subfilter&lt;filter-history&gt;last[]] }}}&gt;\n    {{||$:/plugins/bimlas/locator/actions/remove-field-value}}\n  &lt;/$tiddler&gt;\n  {{||$:/plugins/bimlas/locator/actions/add-field-value}}\n\\end\n\n\\define add-current-tiddler-to-action-tiddler()\n  &lt;$vars originalCurrentTiddler=&lt;&lt;currentTiddler&gt;&gt;&gt;\n    &lt;$tiddler tiddler=&lt;&lt;actionTiddler&gt;&gt;&gt;\n      &lt;$vars actionTiddler={{{ [subfilter&lt;filter-history&gt;last[]] }}}&gt;\n        {{||$:/plugins/bimlas/locator/actions/remove-field-value}}\n      &lt;/$vars&gt;\n      &lt;$vars actionTiddler=&lt;&lt;originalCurrentTiddler&gt;&gt;&gt;\n        {{||$:/plugins/bimlas/locator/actions/add-field-value}}\n      &lt;/$vars&gt;\n    &lt;/$tiddler&gt;\n  &lt;/$vars&gt;\n\\end\n\n&lt;$list filter=\&quot;[title&lt;contextState&gt;locator-direction-of-traverse&lt;currentField&gt;regexp[to]]\&quot; emptyMessage=&lt;&lt;add-current-tiddler-to-action-tiddler&gt;&gt; variable=\&quot;null\&quot;&gt;\n  &lt;&lt;add-action-tiddler-to-current-tiddler&gt;&gt;\n&lt;/$list&gt;\n&quot;
+        },
+        &quot;$:/plugins/bimlas/locator/actions/remove-field-value&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/bimlas/locator/actions/remove-field-value&quot;,
+            &quot;tags&quot;: &quot;$:/tags/Actions&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;\\define remove-value()\n  &lt;$action-setfield $tiddler=&lt;&lt;actionTiddler&gt;&gt; $field=&lt;&lt;currentField&gt;&gt; $value=\&quot;\&quot;/&gt;\n\\end\n\n\\define remove-list-item()\n  &lt;$action-listops $tiddler=&lt;&lt;actionTiddler&gt;&gt; $field=&lt;&lt;currentField&gt;&gt; $subfilter=\&quot;-[all[current]]\&quot;/&gt;\n\\end\n\n&lt;$list filter=\&quot;[title&lt;currentField&gt;subfilter&lt;filter-field-is-list&gt;]\&quot; emptyMessage=&lt;&lt;remove-value&gt;&gt; variable=\&quot;null\&quot;&gt;\n  &lt;&lt;remove-list-item&gt;&gt;\n&lt;/$list&gt;\n&quot;
+        },
+        &quot;$:/plugins/bimlas/locator/actions/remove-filters&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/bimlas/locator/actions/remove-filters&quot;,
+            &quot;tags&quot;: &quot;$:/tags/Actions&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;&lt;$action-deletetiddler $tiddler=&lt;&lt;intersectionState&gt;&gt;/&gt;\n&lt;$action-deletetiddler $tiddler=&lt;&lt;differenceState&gt;&gt;/&gt;\n&lt;$action-setfield $tiddler=&lt;&lt;contextState&gt;&gt; opened-fields-filters=\&quot;\&quot;/&gt;&quot;
+        },
+        &quot;$:/plugins/bimlas/locator/buttons/clear-search-input&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/bimlas/locator/buttons/clear-search-input&quot;,
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;&lt;$button tooltip=\&quot;Clear search text, show all results\&quot; class=&lt;&lt;link-button-class&gt;&gt;&gt;\n  &lt;$action-setfield $tiddler=\&quot;$:/temp/search\&quot; text=\&quot;   \&quot;/&gt;\n  {{$:/core/images/preview-open}}\n&lt;/$button&gt;\n&quot;
+        },
+        &quot;$:/plugins/bimlas/locator/buttons/collapse-history&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/bimlas/locator/buttons/collapse-history&quot;,
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;&lt;$button tooltip=\&quot;Collapse history\&quot; class=&lt;&lt;link-button-class&gt;&gt;&gt;\n  &lt;$action-listops $tiddler=&lt;&lt;contextState&gt;&gt; $field=\&quot;history\&quot; $filter=\&quot;[title&lt;contextState&gt;each:list-item[history]last[]]\&quot;/&gt;\n  {{$:/core/images/fold-button}}\n&lt;/$button&gt;\n&quot;
+        },
+        &quot;$:/plugins/bimlas/locator/buttons/context-arrow&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/bimlas/locator/buttons/context-arrow&quot;,
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;&lt;$list filter=\&quot;[title&lt;contextState&gt;field:invert-direction[yes]]\&quot; emptyMessage={{$:/core/images/right-arrow}}&gt;\n  {{$:/core/images/left-arrow}}\n&lt;/$list&gt;\n&quot;
+        },
+        &quot;$:/plugins/bimlas/locator/buttons/copy-filter-to-advanced-search&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/bimlas/locator/buttons/copy-filter-to-advanced-search&quot;,
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;&lt;!--\nSince the search term may contain characters that affect the filter, I\ndo not copy the search term, I just refer to the tiddler.\n--&gt;\n&lt;$wikify name=\&quot;filter\&quot; text=\&quot;&lt;&lt;filter-search-context&gt;&gt; +[search{&lt;&lt;searchTiddler&gt;&gt;}]\&quot;&gt;\n  &lt;$button tooltip=\&quot;Continue filtering in advanced search\&quot; class=&lt;&lt;link-button-class&gt;&gt;&gt;\n    &lt;$action-setfield $tiddler=\&quot;$:/temp/advancedsearch\&quot; text=&lt;&lt;filter&gt;&gt;/&gt;\n    &lt;$action-setfield $tiddler=\&quot;$:/state/tab--1498284803\&quot; text=\&quot;$:/core/ui/AdvancedSearch/Filter\&quot;/&gt;\n    &lt;$action-navigate $to=\&quot;$:/AdvancedSearch\&quot;/&gt;\n    {{$:/core/images/advanced-search-button}}\n  &lt;/$button&gt;\n&lt;/$wikify&gt;\n&quot;
+        },
+        &quot;$:/plugins/bimlas/locator/buttons/create-new-tiddler&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/bimlas/locator/buttons/create-new-tiddler&quot;,
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;\\define add-as-list()\n  &lt;$action-listops $tiddler=\&quot;$:/temp/bimlas/locator/new-tiddler\&quot; $field=&lt;&lt;field&gt;&gt; $subfilter=&lt;&lt;__valueAsFilter__&gt;&gt;/&gt;\n\\end\n\n\\define add-as-value()\n  &lt;$action-setfield $tiddler=\&quot;$:/temp/bimlas/locator/new-tiddler\&quot; $field=&lt;&lt;field&gt;&gt; $value={{{ [subfilter&lt;__valueAsFilter__&gt;] }}}/&gt;\n\\end\n\n\\define add-field-value(valueAsFilter)\n  &lt;$list filter=\&quot;[title&lt;field&gt;subfilter&lt;filter-field-is-list&gt;]\&quot; emptyMessage=&lt;&lt;add-as-value&gt;&gt;&gt;\n    &lt;&lt;add-as-list&gt;&gt;\n  &lt;/$list&gt;\n\\end\n\n\\define add-filters-as-field-values()\n  &lt;$list filter=\&quot;[title&lt;intersectionState&gt;indexes[]]\&quot; variable=\&quot;field\&quot;&gt;\n    &lt;$list filter=\&quot;[title&lt;intersectionState&gt;locator-selected-field-values&lt;field&gt;first[]]\&quot;&gt;\n      &lt;&lt;add-field-value \&quot;[title&lt;intersectionState&gt;locator-selected-field-values&lt;field&gt;]\&quot;&gt;&gt;\n    &lt;/$list&gt;\n  &lt;/$list&gt;\n\\end\n\n\\define add-to-current-context()\n  &lt;$set name=\&quot;field\&quot; filter=&lt;&lt;filter-field-of-relationship&gt;&gt;&gt;\n    &lt;&lt;add-field-value \&quot;[subfilter&lt;filter-history&gt;last[]]\&quot;&gt;&gt;\n  &lt;/$set&gt;\n\\end\n\n&lt;$button tooltip=\&quot;Create new tiddler in the current context\&quot; class=&lt;&lt;link-button-class&gt;&gt;&gt;\n  &lt;&lt;add-filters-as-field-values&gt;&gt;\n  &lt;&lt;add-to-current-context&gt;&gt;\n  &lt;$action-sendmessage $message=\&quot;tm-new-tiddler\&quot; $param=\&quot;$:/temp/bimlas/locator/new-tiddler\&quot; title={{{ [title&lt;titleOfNewTiddler&gt;] [title{$:/language/DefaultNewTiddlerTitle}] -[[]] +[first[]] }}}/&gt;\n  &lt;$action-deletetiddler $tiddler=\&quot;$:/temp/bimlas/locator/new-tiddler\&quot;/&gt;\n  {{$:/core/images/new-button}}\n&lt;/$button&gt;\n&quot;
+        },
+        &quot;$:/plugins/bimlas/locator/buttons/go-down-to-context&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/bimlas/locator/buttons/go-down-to-context&quot;,
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;\\define node()\n  &lt;$button tooltip=\&quot;Go to context, show chidlren of this tiddler\&quot; class=&lt;&lt;link-button-class&gt;&gt; actions={{$:/plugins/bimlas/locator/actions/add-to-history}}&gt;\n    {{$:/plugins/bimlas/locator/buttons/context-arrow}}\n  &lt;/$button&gt;\n\\end\n\n\\define leaf()\n  &lt;$button class=&lt;&lt;link-button-class&gt;&gt;&gt;\n    {{$:/core/images/blank}}\n  &lt;/$button&gt;\n\\end\n\n\\define go-down-to-context()\n  &lt;!-- I have to use macro to use $(...)$ in filter expression --&gt;\n  &lt;$list filter=\&quot;[all[current]locator-enlist-children:$(currentField)$&lt;contextState&gt;] [title&lt;contextState&gt;field:allow-to-open-leaves[yes]] +[first[]]\&quot; emptyMessage=&lt;&lt;leaf&gt;&gt; variable=\&quot;null\&quot;&gt;&lt;&lt;node&gt;&gt;&lt;/$list&gt;\n\\end\n\n&lt;&lt;go-down-to-context&gt;&gt;\n&quot;
+        },
+        &quot;$:/plugins/bimlas/locator/buttons/go-up-to-context&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/bimlas/locator/buttons/go-up-to-context&quot;,
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;\\define actions()\n  &lt;$action-listops $tiddler=&lt;&lt;contextState&gt;&gt; $field=\&quot;history\&quot; $filter=\&quot;[subfilter&lt;filter-history&gt;allbefore&lt;currentTiddler&gt;] [all[current]]\&quot;/&gt;\n  {{$:/plugins/bimlas/locator/actions/remove-filters}}\n\\end\n\n&lt;$button tooltip=\&quot;Go to context, show chidlren of this tiddler\&quot; class=&lt;&lt;link-button-class&gt;&gt; actions=&lt;&lt;actions&gt;&gt;&gt;\n  {{$:/plugins/bimlas/locator/buttons/context-arrow}}\n&lt;/$button&gt;\n&quot;
+        },
+        &quot;$:/plugins/bimlas/locator/buttons/open-field-settings&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/bimlas/locator/buttons/open-field-settings&quot;,
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;&lt;$button\n  to=\&quot;$:/plugins/bimlas/locator/settings/settings\&quot;\n  tooltip=\&quot;Open field settings\&quot;\n  class=&lt;&lt;link-button-class&gt;&gt;\n&gt;\n  {{$:/core/images/options-button}}&lt;$list filter=\&quot;[title&lt;contextState&gt;!regexp[^\\$:/state/bimlas/locator/search/]]\&quot; variable=\&quot;null\&quot;&gt; Open field settings&lt;/$list&gt;\n&lt;/$button&gt;&quot;
+        },
+        &quot;$:/plugins/bimlas/locator/buttons/remove-filters-of-current-field&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/bimlas/locator/buttons/remove-filters-of-current-field&quot;,
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;\\define actions()\n  &lt;$action-setfield $tiddler=&lt;&lt;intersectionState&gt;&gt; $index=&lt;&lt;currentField&gt;&gt; $value=\&quot;\&quot;/&gt;\n  &lt;$action-setfield $tiddler=&lt;&lt;differenceState&gt;&gt; $index=&lt;&lt;currentField&gt;&gt; $value=\&quot;\&quot;/&gt;\n  &lt;$action-listops $tiddler=&lt;&lt;contextState&gt;&gt; $field=\&quot;opened-fields-filters\&quot; $subfilter=\&quot;-[&lt;currentField&gt;]\&quot;/&gt;\n  &lt;$list filter=\&quot;[&lt;recursiveFilteringOfCurrentFieldAvailable&gt;regexp[yes]]\&quot; variable=\&quot;null\&quot;&gt;\n    &lt;$action-setfield $tiddler=\&quot;$:/state/bimlas/locator/search/recursive-filters/\&quot; $index=&lt;&lt;currentField&gt;&gt; $value=\&quot;\&quot;/&gt;\n  &lt;/$list&gt;\n\\end\n\n&lt;$list filter=\&quot;[title&lt;intersectionState&gt;] [title&lt;differenceState&gt;] +[locator-selected-field-values&lt;currentField&gt;first[]]\&quot; variable=\&quot;null\&quot;&gt;\n  &lt;$button tooltip=\&quot;Remove field filters\&quot; class=&lt;&lt;link-button-class&gt;&gt; actions=&lt;&lt;actions&gt;&gt;&gt;\n    {{$:/core/images/cancel-button}}\n  &lt;/$button&gt;\n&lt;/$list&gt;&quot;
+        },
+        &quot;$:/plugins/bimlas/locator/buttons/remove-filters&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/bimlas/locator/buttons/remove-filters&quot;,
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;&lt;$list filter=\&quot;[title&lt;intersectionState&gt;] [title&lt;differenceState&gt;] +[locator-selected-field-values[]first[]]\&quot; variable=\&quot;null\&quot;&gt;\n  &lt;$button tooltip=\&quot;Remove field filters\&quot; class=&lt;&lt;link-button-class&gt;&gt; actions={{$:/plugins/bimlas/locator/actions/remove-filters}}&gt;\n    {{$:/core/images/cancel-button}}\n  &lt;/$button&gt;\n&lt;/$list&gt;&quot;
+        },
+        &quot;$:/plugins/bimlas/locator/buttons/search-in-context&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/bimlas/locator/buttons/search-in-context&quot;,
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;\\define copy-field(sourceTiddler destinationTiddler field)\n  &lt;$set name=\&quot;value\&quot; tiddler=&lt;&lt;__sourceTiddler__&gt;&gt; field=&lt;&lt;__field__&gt;&gt;&gt;\n    &lt;$action-setfield $tiddler=&lt;&lt;__destinationTiddler__&gt;&gt; $field=&lt;&lt;__field__&gt;&gt; $value=&lt;&lt;value&gt;&gt;/&gt;\n  &lt;/$set&gt;\n\\end\n\n\\define clear-data-tiddler(tiddler)\n  &lt;$action-deletetiddler $tiddler=&lt;&lt;__tiddler__&gt;&gt;/&gt;\n  &lt;$action-setfield $tiddler=&lt;&lt;__tiddler__&gt;&gt; type=\&quot;application/json\&quot;/&gt;\n\\end\n\n\\define search-in-current-context()\n  &lt;$action-listops $tiddler=\&quot;$:/state/bimlas/locator/search/intersection/\&quot; $index={{{ [subfilter&lt;filter-field-of-relationship&gt;] }}} $subfilter=\&quot;[subfilter&lt;filter-history&gt;last[]]\&quot;/&gt;\n  &lt;$action-listops $tiddler=\&quot;$:/state/bimlas/locator/search/recursive-filters/\&quot; $index={{{ [subfilter&lt;filter-field-of-relationship&gt;] }}} $filter=\&quot;[subfilter&lt;filter-history&gt;last[]]\&quot;/&gt;\n\\end\n\n\\define copy-filters()\n  &lt;$macrocall $name=\&quot;copy-field\&quot; sourceTiddler=&lt;&lt;intersectionState&gt;&gt; destinationTiddler=\&quot;$:/state/bimlas/locator/search/intersection/\&quot; field=\&quot;text\&quot;/&gt;\n  &lt;$macrocall $name=\&quot;copy-field\&quot; sourceTiddler=&lt;&lt;differenceState&gt;&gt; destinationTiddler=\&quot;$:/state/bimlas/locator/search/difference/\&quot; field=\&quot;text\&quot;/&gt;\n\\end\n\n\\define reset-search-context()\n  &lt;$action-deletetiddler $tiddler=\&quot;$:/state/bimlas/locator/search/context/\&quot;/&gt;\n  &lt;$list filter=\&quot;[&lt;recursiveFilteringAvailable&gt;regexp[yes]]\&quot; variable=\&quot;null\&quot;&gt;\n    &lt;$macrocall $name=\&quot;clear-data-tiddler\&quot; tiddler=\&quot;$:/state/bimlas/locator/search/recursive-filters/\&quot;/&gt;\n  &lt;/$list&gt;\n  &lt;$macrocall $name=\&quot;clear-data-tiddler\&quot; tiddler=\&quot;$:/state/bimlas/locator/search/intersection/\&quot;/&gt;\n  &lt;$macrocall $name=\&quot;clear-data-tiddler\&quot; tiddler=\&quot;$:/state/bimlas/locator/search/difference/\&quot;/&gt;\n\\end\n\n&lt;$button tooltip=\&quot;Restrict search to this context (in full depth)\&quot; class=&lt;&lt;link-button-class&gt;&gt;&gt;\n  &lt;&lt;reset-search-context&gt;&gt;\n  &lt;&lt;copy-filters&gt;&gt;\n  &lt;&lt;search-in-current-context&gt;&gt;\n  {{$:/core/images/advanced-search-button}}\n&lt;/$button&gt;\n&quot;
+        },
+        &quot;$:/plugins/bimlas/locator/buttons/toggle-context-settings&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/bimlas/locator/buttons/toggle-context-settings&quot;,
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;\\define opened()\n  &lt;$button tooltip=\&quot;Toggle context settings\&quot; class=&lt;&lt;link-button-class additionalClasses:\&quot;active\&quot;&gt;&gt;&gt;\n    &lt;$action-setfield $tiddler=&lt;&lt;contextState&gt;&gt; $field=\&quot;context-settings-opened\&quot; $value=\&quot;\&quot;/&gt;\n    {{$:/core/images/options-button}}\n  &lt;/$button&gt;\n\\end\n\n\\define closed()\n  &lt;$button tooltip=\&quot;Toggle context settings\&quot; class=&lt;&lt;link-button-class&gt;&gt;&gt;\n    &lt;$action-setfield $tiddler=&lt;&lt;contextState&gt;&gt; $field=\&quot;context-settings-opened\&quot; $value=\&quot;yes\&quot;/&gt;\n    {{$:/core/images/options-button}}\n  &lt;/$button&gt;\n\\end\n\n&lt;$list filter=\&quot;[title&lt;contextState&gt;field:context-settings-opened[yes]]\&quot; emptyMessage=&lt;&lt;closed&gt;&gt;&gt;&lt;&lt;opened&gt;&gt;&lt;/$list&gt;&quot;
+        },
+        &quot;$:/plugins/bimlas/locator/edit-template/locator-references&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/bimlas/locator/edit-template/locator-references&quot;,
+            &quot;list-after&quot;: &quot;$:/core/ui/EditTemplate/title&quot;,
+            &quot;tags&quot;: &quot;$:/tags/EditTemplate&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;\\define prompt()\n  The following references to this tiddler in //&lt;&lt;__field__&gt;&gt;// [[Locator field|$:/plugins/bimlas/locator/settings/settings]] will not be automatically updated:\n\\end\n\n\\define children-by-field(field)\n  &lt;$list filter=\&quot;[title{!!draft.of}locator-enlist-children:$field$[]first[]]\&quot; variable=\&quot;null\&quot;&gt;\n    &lt;$vars stateTiddler=&lt;&lt;qualify \&quot;$:/state/bimlas/locator/edit/references/$field$\&quot;&gt;&gt; &gt;\n\n      &lt;$reveal type=\&quot;nomatch\&quot; state=&lt;&lt;stateTiddler&gt;&gt; text=\&quot;show\&quot;&gt;\n        &lt;$button set=&lt;&lt;stateTiddler&gt;&gt; setTo=\&quot;show\&quot; class=\&quot;tc-btn-invisible\&quot;&gt;\n          {{$:/core/images/right-arrow}}\n          &lt;&lt;prompt&gt;&gt;\n        &lt;/$button&gt;\n      &lt;/$reveal&gt;\n      &lt;$reveal type=\&quot;match\&quot; state=&lt;&lt;stateTiddler&gt;&gt; text=\&quot;show\&quot;&gt;\n        &lt;$button set=&lt;&lt;stateTiddler&gt;&gt; setTo=\&quot;hide\&quot; class=\&quot;tc-btn-invisible\&quot;&gt;\n          {{$:/core/images/down-arrow}}\n          &lt;&lt;prompt&gt;&gt;\n        &lt;/$button&gt;\n      &lt;/$reveal&gt;\n\n      &lt;$reveal type=\&quot;match\&quot; state=&lt;&lt;stateTiddler&gt;&gt; text=\&quot;show\&quot;&gt;\n        &lt;$list filter=\&quot;[title{!!draft.of}locator-enlist-children:$field$[]]\&quot; template=\&quot;$:/core/ui/ListItemTemplate\&quot;&gt;\n          &lt;$link/&gt;\n        &lt;/$list&gt;\n      &lt;/$reveal&gt;\n\n    &lt;/$vars&gt;\n  &lt;/$list&gt;\n\\end\n\n&lt;$reveal state=\&quot;!!draft.title\&quot; type=\&quot;nomatch\&quot; text={{!!draft.of}} tag=\&quot;div\&quot;&gt;\n  &lt;$list filter=\&quot;[locator-enlist-relationship-fields[]] -[[tags]] -[[list]] -[[LINKS-IN-TEXT]]\&quot; variable=\&quot;currentField\&quot;&gt;\n    &lt;$macrocall $name=\&quot;children-by-field\&quot; field=&lt;&lt;currentField&gt;&gt;/&gt;\n  &lt;/$list&gt;\n&lt;/$reveal&gt;&quot;
+        },
+        &quot;$:/plugins/bimlas/locator/field-templates/color&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/bimlas/locator/field-templates/color&quot;,
+            &quot;caption&quot;: &quot;Color&quot;,
+            &quot;tags&quot;: &quot;$:/tags/bimlas/locator/field-templates&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;&lt;input type=\&quot;color\&quot; name=\&quot;favcolor\&quot; value=&lt;&lt;currentTiddler&gt;&gt; disabled&gt; &lt;$view field=\&quot;title\&quot;/&gt;&quot;
+        },
+        &quot;$:/plugins/bimlas/locator/field-templates/edit-fields-plus-transclusion&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/bimlas/locator/field-templates/edit-fields-plus-transclusion&quot;,
+            &quot;caption&quot;: &quot;Edit fields + Transclusion&quot;,
+            &quot;tags&quot;: &quot;$:/tags/bimlas/locator/context-item-templates&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;\\define frame-classes() tc-tiddler-frame tc-tiddler-edit-frame $(missingTiddlerClass)$ $(shadowTiddlerClass)$ $(systemTiddlerClass)$\n\n{{||$:/plugins/bimlas/locator/field-templates/link}}\n&lt;div class=&lt;&lt;frame-classes&gt;&gt; data-tiddler-title=&lt;&lt;currentTiddler&gt;&gt;&gt;\n  &lt;$fieldmangler&gt;\n    {{||$:/core/ui/EditTemplate/tags}}\n    {{||$:/core/ui/EditTemplate/fields}}\n  &lt;/$fieldmangler&gt;\n&lt;/div&gt;\n&lt;$transclude mode=\&quot;block\&quot;/&gt;\n&lt;hr style=\&quot;border-top: double\&quot;/&gt;&quot;
+        },
+        &quot;$:/plugins/bimlas/locator/field-templates/edit-fields&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/bimlas/locator/field-templates/edit-fields&quot;,
+            &quot;caption&quot;: &quot;Edit fields&quot;,
+            &quot;tags&quot;: &quot;$:/tags/bimlas/locator/context-item-templates&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;\\define frame-classes() tc-tiddler-frame tc-tiddler-edit-frame $(missingTiddlerClass)$ $(shadowTiddlerClass)$ $(systemTiddlerClass)$\n\n{{||$:/plugins/bimlas/locator/field-templates/link}}\n&lt;div class=&lt;&lt;frame-classes&gt;&gt; data-tiddler-title=&lt;&lt;currentTiddler&gt;&gt;&gt;\n  &lt;$fieldmangler&gt;\n    {{||$:/core/ui/EditTemplate/tags}}\n    {{||$:/core/ui/EditTemplate/fields}}\n  &lt;/$fieldmangler&gt;\n&lt;/div&gt;\n&lt;hr style=\&quot;border-top: double\&quot;/&gt;&quot;
+        },
+        &quot;$:/plugins/bimlas/locator/field-templates/fields-plus-transclusion&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/bimlas/locator/field-templates/fields-plus-transclusion&quot;,
+            &quot;caption&quot;: &quot;Fields + Transclusion&quot;,
+            &quot;tags&quot;: &quot;$:/tags/bimlas/locator/context-item-templates&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;{{||$:/plugins/bimlas/locator/field-templates/link}}\n{{||$:/plugins/bimlas/locator/viewtemplate/field-list}}\n&lt;$transclude mode=\&quot;block\&quot;/&gt;\n&lt;hr style=\&quot;border-top: double\&quot;/&gt;&quot;
+        },
+        &quot;$:/plugins/bimlas/locator/field-templates/fields&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/bimlas/locator/field-templates/fields&quot;,
+            &quot;caption&quot;: &quot;Fields&quot;,
+            &quot;tags&quot;: &quot;$:/tags/bimlas/locator/context-item-templates&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;{{||$:/plugins/bimlas/locator/field-templates/link}}\n{{||$:/plugins/bimlas/locator/viewtemplate/field-list}}\n&lt;hr style=\&quot;border-top: double\&quot;/&gt;&quot;
+        },
+        &quot;$:/plugins/bimlas/locator/field-templates/icon&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/bimlas/locator/field-templates/icon&quot;,
+            &quot;caption&quot;: &quot;Icon&quot;,
+            &quot;tags&quot;: &quot;$:/tags/bimlas/locator/field-templates&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;&lt;button class=\&quot;tc-btn-invisible\&quot; disabled&gt;&lt;$transclude&gt;&lt;&lt;currentTiddler&gt;&gt;&lt;/$transclude&gt;&lt;/button&gt; {{||$:/plugins/bimlas/locator/field-templates/link}}&quot;
+        },
+        &quot;$:/plugins/bimlas/locator/field-templates/link&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/bimlas/locator/field-templates/link&quot;,
+            &quot;caption&quot;: &quot;Link&quot;,
+            &quot;tags&quot;: &quot;$:/tags/bimlas/locator/field-templates $:/tags/bimlas/locator/context-item-templates&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;&lt;$link to=&lt;&lt;currentTiddler&gt;&gt;&gt;\n  &lt;$transclude field=\&quot;caption\&quot;&gt;&lt;$view field=\&quot;title\&quot;/&gt;&lt;/$transclude&gt;\n&lt;/$link&gt;&quot;
+        },
+        &quot;$:/plugins/bimlas/locator/field-templates/tag&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/bimlas/locator/field-templates/tag&quot;,
+            &quot;caption&quot;: &quot;Tag&quot;,
+            &quot;tags&quot;: &quot;$:/tags/bimlas/locator/field-templates&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;&lt;&lt;tag&gt;&gt;&quot;
+        },
+        &quot;$:/plugins/bimlas/locator/field-templates/text&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/bimlas/locator/field-templates/text&quot;,
+            &quot;caption&quot;: &quot;Text&quot;,
+            &quot;tags&quot;: &quot;$:/tags/bimlas/locator/field-templates&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;&lt;$view field=\&quot;title\&quot;/&gt;&quot;
+        },
+        &quot;$:/plugins/bimlas/locator/field-templates/transclusion&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/bimlas/locator/field-templates/transclusion&quot;,
+            &quot;caption&quot;: &quot;Transclusion&quot;,
+            &quot;tags&quot;: &quot;$:/tags/bimlas/locator/context-item-templates&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;{{||$:/plugins/bimlas/locator/field-templates/link}}\n&lt;br/&gt;\n&lt;$transclude mode=\&quot;block\&quot;/&gt;\n&lt;hr style=\&quot;border-top: double\&quot;/&gt;&quot;
+        },
+        &quot;$:/plugins/bimlas/locator/macros/locator-fields&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/bimlas/locator/macros/locator-fields&quot;,
+            &quot;tags&quot;: &quot;$:/tags/Macro&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;\\define locator-fields()\n  &lt;!-- Hide internal macros, do not make them globally available --&gt;\n  &lt;$importvariables filter=\&quot;[all[tiddlers+shadows]prefix[$:/plugins/bimlas/locator/macros/]]\&quot;&gt;\n    &lt;$vars\n      contextState=\&quot;$:/state/bimlas/locator/search/context/\&quot;\n      intersectionState=\&quot;$:/state/bimlas/locator/search/intersection/\&quot;\n      differenceState=\&quot;$:/state/bimlas/locator/search/difference/\&quot;\n      recursiveFilteringAvailable=\&quot;yes\&quot;\n    &gt;\n\n      {{$:/plugins/bimlas/locator/templates/search-toolbar}} {{$:/plugins/bimlas/locator/buttons/remove-filters}}\n\n      &lt;p&gt;&lt;$checkbox tiddler=&lt;&lt;contextState&gt;&gt; field=\&quot;limit-to-fields-of-filtered-tiddlers\&quot; checked=\&quot;yes\&quot; unchecked=\&quot;no\&quot; default=\&quot;yes\&quot;&gt; Limit to fields of filtered tiddlers&lt;/$checkbox&gt;&lt;/p&gt;\n\n      &lt;$list filter=\&quot;[subfilter&lt;filter-selected-field-values&gt;first[]]\&quot; emptyMessage=\&quot;\&quot;\&quot;&lt;$list filter=\&quot;0\&quot; variable=\&quot;resultCount\&quot; template=\&quot;$:/language/Search/Matches\&quot;/&gt;\&quot;\&quot;\&quot;&gt;\n        &lt;$list filter=\&quot;[subfilter&lt;filter-search-context&gt;count[]]\&quot; variable=\&quot;resultCount\&quot; template=\&quot;$:/language/Search/Matches\&quot;/&gt;\n      &lt;/$list&gt;\n\n      &lt;!-- searchTiddler variable does not available in transcluded tiddlers by default --&gt;\n      &lt;$set name=\&quot;filterContextItems\&quot; filter=\&quot;[&lt;contextState&gt;field:limit-to-fields-of-filtered-tiddlers[no]]\&quot; value=\&quot;[!is[system]]\&quot; emptyValue=&lt;&lt;filter-search-context&gt;&gt;&gt;\n        &lt;$vars searchedFieldValue={{$(searchTiddler)$}}&gt;\n          {{$:/plugins/bimlas/locator/templates/field-names}}\n        &lt;/$vars&gt;\n      &lt;/$set&gt;\n\n      &lt;$list filter=\&quot;[subfilter&lt;filter-selected-field-values&gt;first[]]\&quot;&gt;\n        &lt;$list filter=\&quot;[subfilter&lt;filter-search-context&gt;limit[250]]\&quot; template=\&quot;$:/core/ui/ListItemTemplate\&quot;/&gt;\n      &lt;/$list&gt;\n\n    &lt;/$vars&gt;\n  &lt;/$importvariables&gt;\n\\end\n&quot;
+        },
+        &quot;$:/plugins/bimlas/locator/macros/locator-search&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/bimlas/locator/macros/locator-search&quot;,
+            &quot;tags&quot;: &quot;$:/tags/Macro&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;\\define locator-search()\n  &lt;!-- Hide internal macros, do not make them globally available --&gt;\n  &lt;$importvariables filter=\&quot;[all[tiddlers+shadows]prefix[$:/plugins/bimlas/locator/macros/]]\&quot;&gt;\n    &lt;$vars\n      contextState=\&quot;$:/state/bimlas/locator/search/context/\&quot;\n      intersectionState=\&quot;$:/state/bimlas/locator/search/intersection/\&quot;\n      differenceState=\&quot;$:/state/bimlas/locator/search/difference/\&quot;\n      filterContextItems=\&quot;[subfilter&lt;filter-search-context&gt;search{$(searchTiddler)$}]\&quot;\n      recursiveFilteringAvailable=\&quot;yes\&quot;\n    &gt;\n\n      {{$:/plugins/bimlas/locator/templates/search-toolbar}}\n\n      &lt;$list filter=\&quot;[subfilter&lt;filterContextItems&gt;count[]]\&quot; variable=\&quot;resultCount\&quot; template=\&quot;$:/language/Search/Matches\&quot;/&gt;\n\n      {{$:/plugins/bimlas/locator/templates/fields-filter}}\n\n      //&lt;small&gt;{{$:/language/Search/Matches/Title}}&lt;/small&gt;//\n\n      &lt;$list filter=\&quot;[subfilter&lt;filterContextItems&gt;search:title{$(searchTiddler)$}limit[250]]\&quot; template=\&quot;$:/core/ui/ListItemTemplate\&quot;/&gt;\n\n      //&lt;small&gt;{{$:/language/Search/Matches/All}}&lt;/small&gt;//\n\n      &lt;$list filter=\&quot;[subfilter&lt;filterContextItems&gt;limit[250]]\&quot; template=\&quot;$:/core/ui/ListItemTemplate\&quot;/&gt;\n\n    &lt;/$vars&gt;\n  &lt;/$importvariables&gt;\n\\end\n&quot;
+        },
+        &quot;$:/plugins/bimlas/locator/macros/locator-view&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/bimlas/locator/macros/locator-view&quot;,
+            &quot;tags&quot;: &quot;$:/tags/Macro&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;\\define locator-view(baseTitle fieldOfRelationship:\&quot;tags\&quot; templateOfContextItems:\&quot;$:/plugins/bimlas/locator/field-templates/link\&quot;)\n  &lt;!-- Hide internal macros, do not make them globally available --&gt;\n  &lt;$importvariables filter=\&quot;[all[tiddlers+shadows]prefix[$:/plugins/bimlas/locator/macros/]]\&quot;&gt;\n    &lt;$vars\n      contextState=\&quot;$:/state/bimlas/locator/view/context/$(currentTiddler)$\&quot;\n      intersectionState=\&quot;$:/state/bimlas/locator/view/intersection/$(currentTiddler)$\&quot;\n      differenceState=\&quot;$:/state/bimlas/locator/view/difference/$(currentTiddler)$\&quot;\n      defaultFieldOfRelationship=&lt;&lt;__fieldOfRelationship__&gt;&gt;\n    &gt;\n      &lt;!-- I have to create them nested because internal variables use external ones --&gt;\n      &lt;$vars currentField={{{ [subfilter&lt;filter-field-of-relationship&gt;] }}}&gt;\n        &lt;$vars filterContextItems=&lt;&lt;filter-view-context&gt;&gt;&gt;\n          &lt;div class=\&quot;tc-table-of-contents\&quot;&gt;\n\n            {{$:/plugins/bimlas/locator/templates/history}}\n\n            ---\n\n            {{$:/plugins/bimlas/locator/templates/context-settings}}\n            &lt;div class=\&quot;bimlas-locator right\&quot;&gt;\n              {{||$:/plugins/bimlas/locator/templates/view-toolbar}}\n            &lt;/div&gt;\n            {{$:/plugins/bimlas/locator/templates/fields-filter}}\n            &lt;ol class=\&quot;bimlas-locator\&quot;&gt;\n              &lt;$list filter=\&quot;[subfilter&lt;filter-field-of-relationship&gt;regexp[^LINKS-IN-TEXT$]]\&quot; emptyMessage={{$:/plugins/bimlas/locator/templates/list-of-context-items}}&gt;\n                {{||$:/plugins/bimlas/locator/templates/list-of-links-in-text}}\n              &lt;/$list&gt;\n            &lt;/ol&gt;\n\n          &lt;/div&gt;\n        &lt;/$vars&gt;\n      &lt;/$vars&gt;\n    &lt;/$vars&gt;\n  &lt;/$importvariables&gt;\n\\end\n&quot;
+        },
+        &quot;$:/plugins/bimlas/locator/macros/css-classes&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/bimlas/locator/macros/css-classes&quot;,
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;\\define link-button-class(additionalClasses) tc-btn-invisible tc-tiddlylink bimlas-locator $additionalClasses$\n\\define menu-list-item-class() tc-menu-list-item bimlas-locator&quot;
+        },
+        &quot;$:/plugins/bimlas/locator/macros/filters&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/bimlas/locator/macros/filters&quot;,
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;\\define filter-history() [&lt;__baseTitle__&gt;] [title&lt;contextState&gt;each:list-item[history]] -[[]]\n\\define filter-selected-field-values() [title&lt;intersectionState&gt;] [title&lt;differenceState&gt;] +[locator-selected-field-values&lt;currentField&gt;]\n\\define filter-field-is-list() [addprefix[$:/config/bimlas/locator/fields/]field:field-type[list]]\n\\define filter-unfiltered-view-context-items() [subfilter&lt;filter-history&gt;last[]locator-enlist-children:$(currentField)$&lt;contextState&gt;!has[draft.of]]\n\\define filter-view-context() [subfilter&lt;filter-history&gt;last[]locator-enlist-children:$(currentField)$&lt;contextState&gt;!has[draft.of]locator-fields-filter&lt;intersectionState&gt;!locator-fields-filter&lt;differenceState&gt;]\n\\define filter-search-context() [!is[system]locator-fields-filter:recursive[$(intersectionState)$]!locator-fields-filter:recursive[$(differenceState)$]]\n\\define filter-field-of-relationship() [title&lt;contextState&gt;get[field-of-relationship]] [&lt;defaultFieldOfRelationship&gt;] +[first[]]\n\n&lt;!--\n I know that `filter-view-context` uses a code duplication of\n `filter-unfiltered-view-context-items`, but I have to do this way, becuse\n  $(variable)$ works only with variables defined in direct parent macro, thus\n  I cannot add another level to call chain\n--&gt;&quot;
+        },
+        &quot;$:/plugins/bimlas/locator/macros/javascript-filters.js&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/bimlas/locator/macros/javascript-filters.js&quot;,
+            &quot;text&quot;: &quot;/*\\\ntitle: $:/plugins/bimlas/locator/macros/javascript-filters.js\ntype: application/javascript\nmodule-type: filteroperator\n\nSpecial filters used by Locator\n\n\\*/\n(function() {\n\n\t/*jslint node: true, browser: true */\n\t/*global $tw: true */\n\t\&quot;use strict\&quot;;\n\n\tfunction getFieldDefinition(options,field) {\n\t\tvar fieldOptionsTiddler = \&quot;$:/config/bimlas/locator/fields/\&quot; + field;\n\n\t\treturn options.wiki.getCacheForTiddler(fieldOptionsTiddler,\&quot;fieldListingOperator\&quot;,function() {\n\t\t\tvar fieldOptions = options.wiki.getTiddler(fieldOptionsTiddler) || {fields: {}};\n\t\t\tvar filterOperators = options.wiki.getFilterOperators();\n\t\t\tvar fieldDefinitions = {\n\t\t\t\t\&quot;value\&quot;: {\n\t\t\t\t\tfieldType: \&quot;value\&quot;,\n\t\t\t\t\tdirection: fieldOptions.fields[\&quot;field-direction\&quot;],\n\t\t\t\t\tenlistChildren: {\n\t\t\t\t\t\t\&quot;to\&quot;: function(title,input,prefix) {\n\t\t\t\t\t\t\treturn filterOperators[\&quot;field\&quot;](input,{operand: title,prefix: prefix,suffix: field},options);\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\&quot;from\&quot;: function(title,unusedInput,unusedPrefix) {\n\t\t\t\t\t\t\treturn (options.wiki.getTiddler(title) || {fields: {}}).fields[field] || []\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\&quot;list\&quot;: {\n\t\t\t\t\tfieldType: \&quot;list\&quot;,\n\t\t\t\t\tdirection: fieldOptions.fields[\&quot;field-direction\&quot;],\n\t\t\t\t\tenlistChildren: {\n\t\t\t\t\t\t\&quot;to\&quot;: function(title,input,prefix) {\n\t\t\t\t\t\t\treturn filterOperators[\&quot;contains\&quot;](input,{operand: title,prefix: prefix,suffix: field},options);\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\&quot;from\&quot;: function(title,unusedInput,unusedPrefix) {\n\t\t\t\t\t\t\treturn options.wiki.getTiddlerList(title,field) || [];\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t};\n\t\t\tvar linksInTextDefinition = {\n\t\t\t\tfieldType: \&quot;value\&quot;,\n\t\t\t\tdirection: fieldOptions.fields[\&quot;field-direction\&quot;],\n\t\t\t\tenlistChildren: {\n\t\t\t\t\t\&quot;to\&quot;: function(title,unusedInput,unusedPrefix) {\n\t\t\t\t\t\treturn options.wiki.getTiddlerBacklinks(title);\n\t\t\t\t\t},\n\t\t\t\t\t\&quot;from\&quot;: function(title,unusedInput,unusedPrefix) {\n\t\t\t\t\t\treturn options.wiki.getTiddlerLinks(title);\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t};\n\n\t\t\treturn field === \&quot;LINKS-IN-TEXT\&quot;\n\t\t\t\t? linksInTextDefinition\n\t\t\t\t: fieldDefinitions[fieldOptions.fields[\&quot;field-type\&quot;] || \&quot;value\&quot;];\n\t\t});\n\t}\n\n\tfunction getActiveFilters(options,filterState) {\n\t\treturn options.wiki.getCacheForTiddler(filterState,\&quot;activeFilters\&quot;,function() {\n\t\t\tvar filteredFields = options.wiki.getTiddlerDataCached(filterState,{});\n\t\t\tvar results = {};\n\n\t\t\t$tw.utils.each(filteredFields,function(valuesAsString,field) {\n\t\t\t\tvar values = $tw.utils.parseStringArray(valuesAsString) || [];\n\t\t\t\tif(values.length) {\n\t\t\t\t\tresults[field] = values;\n\t\t\t\t}\n\t\t\t});\n\n\t\t\treturn results;\n\t\t});\n\t}\n\n\tfunction applyFieldsFilters(source,options,filterState,filterFunc,prefix) {\n\t\tvar activeFilters = getActiveFilters(options,filterState);\n\t\tvar results = source;\n\n\t\tif(!Object.keys(activeFilters).length) return results;\n\n\t\t$tw.utils.each(activeFilters,function(values,field) {\n\t\t\t$tw.utils.each(values,function(value) {\n\t\t\t\tif(value === \&quot;ANY-VALUE\&quot;) {\n\t\t\t\t\tvar filterOperators = options.wiki.getFilterOperators();\n\t\t\t\t\tresults = filterOperators[\&quot;has\&quot;](results,{operand: field,prefix: prefix},options);\n\t\t\t\t} else {\n\t\t\t\t\tresults = filterFunc(results,field,value,prefix);\n\t\t\t\t}\n\t\t\t\tresults = options.wiki.makeTiddlerIterator(results);\n\t\t\t});\n\t\t});\n\n\t\treturn results;\n\t}\n\n\tfunction getDirectionOfTraverse(options,contextState,fieldOfRelationship) {\n\t\tvar direction = getFieldDefinition(options,fieldOfRelationship).direction;\n\n\t\tif(isDirectionInverted(options,contextState)) {\n\t\t\tdirection = invertDirection(direction);\n\t\t}\n\n\t\treturn direction;\n\t}\n\n\tfunction isDirectionInverted(options,contextState) {\n\t\tvar contextStateTiddler = options.wiki.getTiddler(contextState) || {fields: []};\n\t\treturn contextStateTiddler.fields[\&quot;invert-direction\&quot;] === \&quot;yes\&quot;\n\t}\n\n\tfunction invertDirection(direction) {\n\t\treturn [\&quot;from\&quot;,\&quot;to\&quot;][(direction === \&quot;from\&quot;) + 0];\n\t}\n\n\tfunction enlistChildren(options,parentTitle,fieldOfRelationship,directionOfTraverse) {\n\t\treturn options.wiki.getGlobalCache(\&quot;bimlas-locator-enlist-children-\&quot; + parentTitle + \&quot;-\&quot; + fieldOfRelationship + \&quot;-\&quot; + directionOfTraverse, function() {\n\t\t\tvar fieldDefinition = getFieldDefinition(options, fieldOfRelationship);\n\t\t\tvar allTiddlers = options.wiki.makeTiddlerIterator(options.wiki.getTiddlers());\n\t\t\treturn fieldDefinition.enlistChildren[directionOfTraverse](parentTitle,allTiddlers);\n\t\t});\n\t}\n\n\t/*\n\tFilter titles matching to Locator fields filter\n\n\tInput: list of tiddlers\n\tParam: filterState\n\tPrefix: \&quot;!\&quot; to exclude matching tiddlers\n\tSuffix: \&quot;recusive\&quot; enables recursive filtering\n\t*/\n\texports[\&quot;locator-fields-filter\&quot;] = function(source,operator,options) {\n\t\tvar results = source;\n\t\tvar activeRecursiveFilters = getActiveFilters(options,\&quot;$:/state/bimlas/locator/search/recursive-filters/\&quot;);\n\n\t\tif(operator.suffix === \&quot;recursive\&quot;) {\n\t\t\tresults = applyFieldsFilters(results,options,operator.operand,recursiveFilterFunc,operator.prefix);\n\t\t} else {\n\t\t\tresults = applyFieldsFilters(results,options,operator.operand,directFilterFunc,operator.prefix);\n\t\t}\n\n\t\treturn results;\n\n\t\tfunction directFilterFunc(input,field,value,prefix) {\n\t\t\tvar fieldDefinition = getFieldDefinition(options,field);\n\t\t\treturn fieldDefinition.enlistChildren[\&quot;to\&quot;](value,input,prefix);\n\t\t}\n\n\t\tfunction recursiveFilterFunc(input,field,fieldValue,prefix) {\n\t\t\tvar isRecursiveFilteringActive = $tw.utils.hop(activeRecursiveFilters,field) &amp;&amp; (activeRecursiveFilters[field].indexOf(fieldValue) &gt;= 0);\n\t\t\tif(!isRecursiveFilteringActive) {\n\t\t\t\treturn directFilterFunc(input,field,fieldValue,prefix);\n\t\t\t}\n\n\t\t\tvar fieldDirection = getFieldDefinition(options,field).direction;\n\t\t\tvar children = [];\n\t\t\tcollectChildrenRecursively(fieldValue);\n\t\t\tvar compareFunc = (prefix !== \&quot;!\&quot;)\n\t\t\t\t? function(index) { return index &gt;= 0 }\n\t\t\t\t: function(index) { return index &lt; 0 };\n\t\t\tvar results = [];\n\n\t\t\tinput(function(tiddler,title) {\n\t\t\t\tif(compareFunc(children.indexOf(title))) {\n\t\t\t\t\tresults = $tw.utils.pushTop(results, title);\n\t\t\t\t}\n\t\t\t});\n\n\t\t\treturn results;\n\n\t\t\tfunction collectChildrenRecursively(parent) {\n\t\t\t\t$tw.utils.each(enlistChildren(options,parent,field,fieldDirection),function(child) {\n\t\t\t\t\tif(children.indexOf(child) &lt; 0) {\n\t\t\t\t\t\t$tw.utils.pushTop(children, child);\n\t\t\t\t\t\t$tw.utils.pushTop(children, collectChildrenRecursively(child));\n\t\t\t\t\t}\n\t\t\t\t});\n\t\t\t}\n\t\t}\n\t};\n\n\t/*\n\tFilter fields that are not disabled in Locator field options\n\n\tInput: list of fields\n\tParam (optional): if called from toggleable fields filter (`locator-view` and `locator-search`), set to \&quot;nested\&quot;\n\t*/\n\texports[\&quot;locator-enabled-fields\&quot;] = function(source,operator,options) {\n\t\tvar typeOfFieldsFilter = operator.operand || \&quot;regular\&quot;;\n\t\tvar excludedFields = options.wiki.filterTiddlers(\&quot;[all[tiddlers+shadows]field:hide-in-\&quot; + typeOfFieldsFilter + \&quot;-fields-filter[yes]removeprefix[$:/config/bimlas/locator/fields/]]\&quot;) || [];\n\t\tvar results = [];\n\n\t\tsource(function(tiddler,title) {\n\t\t\tif(excludedFields.indexOf(title) &lt; 0) {\n\t\t\t\tresults.push(title);\n\t\t\t}\n\t\t});\n\n\t\treturn results;\n\t};\n\n\t/*\n\tList fields which can be used to build tree (\&quot;tags\&quot; for example)\n\n\tInput: none\n\tParam (optional): field to check if it's a relationship field\n\t*/\n\texports[\&quot;locator-enlist-relationship-fields\&quot;] = function(source,operator,options) {\n\t\tvar relationshipFields = options.wiki.getGlobalCache(\&quot;bimlas-locator-enlist-relationship-fields\&quot;,function() {\n\t\t\treturn options.wiki.filterTiddlers(\&quot;[all[tiddlers+shadows]prefix[$:/config/bimlas/locator/fields/]has[field-direction]removeprefix[$:/config/bimlas/locator/fields/]]\&quot;);\n\t\t});\n\n\t\tif(operator.operand) {\n\t\t\treturn relationshipFields.indexOf(operator.operand) &gt;= 0\n\t\t\t\t? [operator.operand]\n\t\t\t\t: [];\n\t\t}\n\n\t\treturn relationshipFields;\n\t};\n\n\t/*\n\tList field values according to Locator field settings\n\n\tInput: list of tiddlers\n\tParam: field\n\t*/\n\texports[\&quot;locator-enlist-field-values\&quot;] = function(source,operator,options) {\n\t\tvar fieldDefinition = getFieldDefinition(options,operator.operand);\n\t\tvar results = [];\n\n\t\tsource(function(tiddler,title) {\n\t\t\tif(!tiddler) return;\n\n\t\t\tvar value = fieldDefinition.enlistChildren[\&quot;from\&quot;](title);\n\n\t\t\tif(!value) return;\n\n\t\t\tresults = $tw.utils.pushTop(results,value);\n\t\t});\n\n\t\treturn results;\n\t};\n\n\t/*\n\tList of active field filters\n\n\tInput: filterState\n\tParam (optional): field\n\t*/\n\texports[\&quot;locator-selected-field-values\&quot;] = function(source,operator,options) {\n\t\tvar activeFilters = {};\n\n\t\tsource(function(tiddler,title) {\n\t\t\t$tw.utils.each(getActiveFilters(options,title),function(value,key) {\n\t\t\t\tactiveFilters[key] = $tw.utils.pushTop(activeFilters[key] || [],value);\n\t\t\t});\n\t\t});\n\n\t\tif(!Object.keys(activeFilters).length) return [];\n\n\t\treturn operator.operand\n\t\t\t? activeFilters[operator.operand] || []\n\t\t\t: [\&quot;TODO: Join active filter values (array of arrays)\&quot;];\n\t};\n\n\t/*\n\tList of active field names\n\n\tInput: filterState\n\tParam (optional): none\n\t*/\n\texports[\&quot;locator-selected-field-names\&quot;] = function(source,operator,options) {\n\t\tvar fieldNames = [];\n\n\t\tsource(function(tiddler,title) {\n\t\t\tfieldNames = $tw.utils.pushTop(fieldNames,Object.keys(getActiveFilters(options,title)));\n\t\t});\n\n\t\treturn fieldNames;\n\t};\n\n\t/*\n\tList children of input elements based on selected relationship field\n\n\tInput: parent tiddlers\n\tParam (optional): contextState\n\tSuffix: field of relationship\n\t*/\n\texports[\&quot;locator-enlist-children\&quot;] = function(source,operator,options) {\n\t\tvar fieldOfRelationship = operator.suffix;\n\t\tvar directionOfTraverse = getDirectionOfTraverse(options,operator.operand,fieldOfRelationship);\n\t\tvar results = [];\n\n\t\tsource(function(tiddler,title) {\n\t\t\tresults = $tw.utils.pushTop(results, enlistChildren(options,title,fieldOfRelationship,directionOfTraverse));\n\t\t\tresults = options.wiki.sortByList(results,title);\n\t\t});\n\n\t\treturn results;\n\t};\n\n\t/*\n\tGet direction of traverse: field direction + optional invert direction\n\n\tInput: contextState\n\tParam: field of relationship\n\t*/\n\texports[\&quot;locator-direction-of-traverse\&quot;] = function(source,operator,options) {\n\t\tvar results = [];\n\n\t\tsource(function(tiddler,title) {\n\t\t\tresults = [getDirectionOfTraverse(options,title,operator.operand)];\n\t\t});\n\n\t\treturn results;\n\t};\n\n})();\n&quot;,
+            &quot;type&quot;: &quot;application/javascript&quot;,
+            &quot;module-type&quot;: &quot;filteroperator&quot;
+        },
+        &quot;$:/plugins/bimlas/locator/macros/template-macros&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/bimlas/locator/macros/template-macros&quot;,
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;\\define droppable-menu-list-item(content actions)\n  &lt;$droppable actions=&lt;&lt;__actions__&gt;&gt;&gt;\n    &lt;div class=\&quot;tc-droppable-placeholder\&quot; style=\&quot;display: block\&quot;&gt;\n      &lt;&lt;__content__&gt;&gt;\n    &lt;/div&gt;\n  &lt;/$droppable&gt;\n\\end&quot;
+        },
+        &quot;$:/config/bimlas/locator/fields/LINKS-IN-TEXT&quot;: {
+            &quot;title&quot;: &quot;$:/config/bimlas/locator/fields/LINKS-IN-TEXT&quot;,
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;field-direction&quot;: &quot;from&quot;,
+            &quot;text&quot;: &quot;$:/plugins/bimlas/locator/field-templates/link&quot;
+        },
+        &quot;$:/config/bimlas/locator/fields/bag&quot;: {
+            &quot;title&quot;: &quot;$:/config/bimlas/locator/fields/bag&quot;,
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;hide-in-nested-fields-filter&quot;: &quot;yes&quot;,
+            &quot;hide-in-regular-fields-filter&quot;: &quot;yes&quot;
+        },
+        &quot;$:/config/bimlas/locator/fields/caption&quot;: {
+            &quot;title&quot;: &quot;$:/config/bimlas/locator/fields/caption&quot;,
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;hide-in-nested-fields-filter&quot;: &quot;yes&quot;
+        },
+        &quot;$:/config/bimlas/locator/fields/color&quot;: {
+            &quot;title&quot;: &quot;$:/config/bimlas/locator/fields/color&quot;,
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;$:/plugins/bimlas/locator/field-templates/color&quot;
+        },
+        &quot;$:/config/bimlas/locator/fields/created&quot;: {
+            &quot;title&quot;: &quot;$:/config/bimlas/locator/fields/created&quot;,
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;hide-in-nested-fields-filter&quot;: &quot;yes&quot;,
+            &quot;hide-in-regular-fields-filter&quot;: &quot;yes&quot;
+        },
+        &quot;$:/config/bimlas/locator/fields/draft.of&quot;: {
+            &quot;title&quot;: &quot;$:/config/bimlas/locator/fields/draft.of&quot;,
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;hide-in-nested-fields-filter&quot;: &quot;yes&quot;,
+            &quot;hide-in-regular-fields-filter&quot;: &quot;yes&quot;
+        },
+        &quot;$:/config/bimlas/locator/fields/draft.title&quot;: {
+            &quot;title&quot;: &quot;$:/config/bimlas/locator/fields/draft.title&quot;,
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;hide-in-nested-fields-filter&quot;: &quot;yes&quot;,
+            &quot;hide-in-regular-fields-filter&quot;: &quot;yes&quot;
+        },
+        &quot;$:/config/bimlas/locator/fields/icon&quot;: {
+            &quot;title&quot;: &quot;$:/config/bimlas/locator/fields/icon&quot;,
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;$:/plugins/bimlas/locator/field-templates/icon&quot;
+        },
+        &quot;$:/config/bimlas/locator/fields/list-after&quot;: {
+            &quot;title&quot;: &quot;$:/config/bimlas/locator/fields/list-after&quot;,
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;hide-in-nested-fields-filter&quot;: &quot;yes&quot;,
+            &quot;hide-in-regular-fields-filter&quot;: &quot;yes&quot;,
+            &quot;text&quot;: &quot;$:/plugins/bimlas/locator/field-templates/link&quot;
+        },
+        &quot;$:/config/bimlas/locator/fields/list-before&quot;: {
+            &quot;title&quot;: &quot;$:/config/bimlas/locator/fields/list-before&quot;,
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;hide-in-nested-fields-filter&quot;: &quot;yes&quot;,
+            &quot;hide-in-regular-fields-filter&quot;: &quot;yes&quot;,
+            &quot;text&quot;: &quot;$:/plugins/bimlas/locator/field-templates/link&quot;
+        },
+        &quot;$:/config/bimlas/locator/fields/list&quot;: {
+            &quot;title&quot;: &quot;$:/config/bimlas/locator/fields/list&quot;,
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;field-type&quot;: &quot;list&quot;,
+            &quot;hide-in-nested-fields-filter&quot;: &quot;yes&quot;,
+            &quot;hide-in-regular-fields-filter&quot;: &quot;yes&quot;,
+            &quot;text&quot;: &quot;$:/plugins/bimlas/locator/field-templates/link&quot;
+        },
+        &quot;$:/config/bimlas/locator/fields/modified&quot;: {
+            &quot;title&quot;: &quot;$:/config/bimlas/locator/fields/modified&quot;,
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;hide-in-nested-fields-filter&quot;: &quot;yes&quot;,
+            &quot;hide-in-regular-fields-filter&quot;: &quot;yes&quot;
+        },
+        &quot;$:/config/bimlas/locator/fields/revision&quot;: {
+            &quot;title&quot;: &quot;$:/config/bimlas/locator/fields/revision&quot;,
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;hide-in-nested-fields-filter&quot;: &quot;yes&quot;,
+            &quot;hide-in-regular-fields-filter&quot;: &quot;yes&quot;
+        },
+        &quot;$:/config/bimlas/locator/fields/tags&quot;: {
+            &quot;title&quot;: &quot;$:/config/bimlas/locator/fields/tags&quot;,
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;field-type&quot;: &quot;list&quot;,
+            &quot;field-direction&quot;: &quot;to&quot;,
+            &quot;text&quot;: &quot;$:/plugins/bimlas/locator/field-templates/tag&quot;
+        },
+        &quot;$:/config/bimlas/locator/fields/text&quot;: {
+            &quot;title&quot;: &quot;$:/config/bimlas/locator/fields/text&quot;,
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;hide-in-nested-fields-filter&quot;: &quot;yes&quot;,
+            &quot;hide-in-regular-fields-filter&quot;: &quot;yes&quot;
+        },
+        &quot;$:/config/bimlas/locator/fields/title&quot;: {
+            &quot;title&quot;: &quot;$:/config/bimlas/locator/fields/title&quot;,
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;hide-in-nested-fields-filter&quot;: &quot;yes&quot;,
+            &quot;hide-in-regular-fields-filter&quot;: &quot;yes&quot;,
+            &quot;text&quot;: &quot;$:/plugins/bimlas/locator/field-templates/link&quot;
+        },
+        &quot;$:/config/bimlas/locator/fields/type&quot;: {
+            &quot;title&quot;: &quot;$:/config/bimlas/locator/fields/type&quot;,
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;hide-in-nested-fields-filter&quot;: &quot;yes&quot;
+        },
+        &quot;$:/plugins/bimlas/locator/settings/settings&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/bimlas/locator/settings/settings&quot;,
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;\\define show-in-fields()\n  &lt;$select field=\&quot;hide-in-nested-fields-filter\&quot; default=\&quot;\&quot;&gt;\n    &lt;option value=\&quot;\&quot;&gt;Show&lt;/option&gt;\n    &lt;option value=\&quot;yes\&quot;&gt;Hide&lt;/option&gt;\n  &lt;/$select&gt; in nested filter (`locator-view`, `locator-search`)&lt;br/&gt;\n  &lt;$select field=\&quot;hide-in-regular-fields-filter\&quot; default=\&quot;\&quot;&gt;\n    &lt;option value=\&quot;\&quot;&gt;Show&lt;/option&gt;\n    &lt;option value=\&quot;yes\&quot;&gt;Hide&lt;/option&gt;\n  &lt;/$select&gt; in regular filter (`locator-fields` and tiddler info)\n\\end\n\n\\define field-type()\n  &lt;$select field=\&quot;field-type\&quot; default=\&quot;\&quot;&gt;\n    &lt;option value=\&quot;\&quot;&gt;Value&lt;/option&gt;\n    &lt;option value=\&quot;list\&quot;&gt;List&lt;/option&gt;\n  &lt;/$select&gt;\n\\end\n\n\\define field-direction()\n  &lt;$select field=\&quot;field-direction\&quot; default=\&quot;\&quot;&gt;\n    &lt;option value=\&quot;\&quot;&gt;No&lt;/option&gt;\n    &lt;option value=\&quot;to\&quot;&gt;Yes&lt;/option&gt;\n    &lt;!--\n    I blocked it because a tree with children on top is difficult to handle:\n\n    For example, there is a tiddler named \&quot;Father\&quot; which has \&quot;Kid\&quot; in the \&quot;children\&quot; field\n\n    If you want to filter tiddlers by field values (for example, in the fields filter),\n    \&quot;Father\&quot; will be listed among those tiddlers that have \&quot;Kid\&quot; in the \&quot;children\&quot; field.\n    In fact, we wanted to children of \&quot;Kid\&quot;.\n\n    Filtering \&quot;Kid\&quot; in the \&quot;Fields\&quot; search tab will list the tiddlers that have \&quot;Kid\&quot; in\n    their \&quot;children\&quot; field (for example, \&quot;Father\&quot;). If you turn on recursive filtering,\n    it will list all tiddlers starting with \&quot;Kid\&quot; (so \&quot;Father\&quot; will not be listed).\n\n    The \&quot;Create tiddler in context\&quot; button also has to be aware of the direction of the\n    field, which also complicates the code.\n\n    If you do make this option available, remember to tell the user that when renaming a\n    tiddler, he must rewrite the field values that refer to the current tiddler. If you\n    want to rewrite it automatically, make sure it works properly with the Relink plugin\n    (does not adding the new name more than once to the field).\n    --&gt;\n    &lt;!-- &lt;option value=\&quot;from\&quot;&gt;From&lt;/option&gt; --&gt;\n  &lt;/$select&gt;\n\\end\n\n\\define template()\n  &lt;$select field=\&quot;text\&quot; default=\&quot;$:/plugins/bimlas/locator/field-templates/text\&quot;&gt;\n    &lt;$list filter=\&quot;[all[tiddlers+shadows]tag[$:/tags/bimlas/locator/field-templates]]\&quot;&gt;\n      &lt;option value=&lt;&lt;currentTiddler&gt;&gt;&gt;&lt;$transclude field=\&quot;caption\&quot;&gt;&lt;$view field=\&quot;title\&quot;/&gt;&lt;/$transclude&gt;&lt;/option&gt;\n    &lt;/$list&gt;\n  &lt;/$select&gt;\n  &lt;$transclude/&gt;\n\\end\n\n\\define settings(field)\n  &lt;$importvariables filter=\&quot;[all[tiddlers+shadows]prefix[$:/plugins/bimlas/locator/macros/]]\&quot;&gt;\n\n  &lt;h3&gt;&lt;$link to=\&quot;$:/config/bimlas/locator/fields/$field$\&quot;&gt;&lt;$text text=&lt;&lt;__field__&gt;&gt;/&gt;&lt;/$link&gt;&lt;/h3&gt;\n\n    &lt;div class=\&quot;tc-control-panel\&quot;&gt;\n      &lt;table&gt;\n        &lt;tbody&gt;\n          &lt;tr&gt;\n            &lt;td&gt;Description&lt;/td&gt;\n            &lt;td&gt;//{{$:/language/Docs/Fields/$field$}}//&lt;/td&gt;\n          &lt;/tr&gt;\n          &lt;tr&gt;\n            &lt;td&gt;Show in fields filter&lt;/td&gt;\n            &lt;td&gt;\n              &lt;&lt;show-in-fields&gt;&gt;\n            &lt;/td&gt;\n          &lt;/tr&gt;\n          &lt;tr&gt;\n            &lt;td&gt;Field type&lt;/td&gt;\n            &lt;td&gt;\n              &lt;&lt;field-type&gt;&gt;\n              &lt;p&gt;//Does the field contain a single value (for example `Franz Kafka`) or a list of values (`[[Franz Kafka]] [[Dostojevskij]]`)?//&lt;/p&gt;\n            &lt;/td&gt;\n          &lt;/tr&gt;\n          &lt;tr&gt;\n            &lt;td&gt;Does the field represent a tree?&lt;/td&gt;\n            &lt;td&gt;\n              &lt;&lt;field-direction&gt;&gt;\n              &lt;p&gt;//If the field contains the title(s) of other tiddler(s) (like \&quot;tags\&quot;), set it to \&quot;Yes\&quot;.//&lt;/p&gt;\n            &lt;/td&gt;\n          &lt;/tr&gt;\n          &lt;tr&gt;\n            &lt;td&gt;Template&lt;/td&gt;\n            &lt;td&gt;\n              &lt;&lt;template&gt;&gt;\n              &lt;p&gt;//The template to display in the field filter.//&lt;/p&gt;\n              &lt;p&gt;//You can create your own field template tiddlers by adding the// &lt;&lt;tag \&quot;$:/tags/bimlas/locator/field-templates\&quot;&gt;&gt; //tag to them (click on this tag pill for examples).//&lt;/p&gt;\n            &lt;/td&gt;\n          &lt;/tr&gt;\n        &lt;/tbody&gt;\n      &lt;/table&gt;\n    &lt;/div&gt;\n\n  &lt;/$importvariables&gt;\n\\end\n\n\\define option()\n  &lt;option value=&lt;&lt;currentTiddler&gt;&gt;&gt;\n    &lt;$view field=\&quot;title\&quot;/&gt;\n    &lt;$list filter=\&quot;[subfilter&lt;settingsTiddler&gt;is[tiddler]] [subfilter&lt;settingsTiddler&gt;is[shadow]] +[first[]]\&quot;&gt;~&lt;/$list&gt;\n    &lt;$list filter=\&quot;[subfilter&lt;settingsTiddler&gt;is[tiddler]]\&quot;&gt;*&lt;/$list&gt;\n  &lt;/option&gt;\n\\end\n\n\\define settingsTiddler() [title&lt;currentTiddler&gt;addprefix[$:/config/bimlas/locator/fields/]]\n\nSelect field to edit its settings:\n&lt;$select tiddler=\&quot;$:/temp/bimlas/locator/settings-of-field\&quot;&gt;\n  &lt;optgroup label=\&quot;Fields of regular tiddlers\&quot;&gt;\n    &lt;$list filter=\&quot;[!is[system]fields[]sort[]]\&quot;&gt;\n      &lt;&lt;option&gt;&gt;\n    &lt;/$list&gt;\n  &lt;/optgroup&gt;\n  &lt;optgroup label=\&quot;Fields of system tiddlers\&quot;&gt;\n    &lt;$list filter=\&quot;[all[tiddlers+shadows]is[system]fields[]] -[!is[system]fields[]] +[sort[]]\&quot;&gt;\n      &lt;&lt;option&gt;&gt;\n    &lt;/$list&gt;\n  &lt;/optgroup&gt;\n&lt;/$select&gt;\n\n* //`~`: Has custom settings//\n* //`*`: Settings modified by user//\n\nTo set up a new field, first add it to at least one tiddler.\n\n&lt;p&gt;//You can create your own context item template tiddlers by adding the// &lt;&lt;tag \&quot;$:/tags/bimlas/locator/context-item-templates\&quot;&gt;&gt; //tag to them (click on this tag pill for examples).//&lt;/p&gt;\n\n&lt;$list filter=\&quot;[title{$:/temp/bimlas/locator/settings-of-field}] -[[]]\&quot;&gt;\n  &lt;$list filter=&lt;&lt;settingsTiddler&gt;&gt;&gt;\n    &lt;$macrocall $name=\&quot;settings\&quot; field={{$:/temp/bimlas/locator/settings-of-field}}/&gt;\n  &lt;/$list&gt;\n&lt;/$list&gt;&quot;
+        },
+        &quot;$:/plugins/bimlas/locator/stylesheet&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/bimlas/locator/stylesheet&quot;,
+            &quot;tags&quot;: &quot;$:/tags/Stylesheet&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;.tc-tiddler-frame.bimlas-locator-explanation {\n  max-width: 400px;\n}\n.bimlas-locator-explanation svg {\n  width: 1rem;\n  height: 1rem;\n}\n.tc-drop-down button.bimlas-locator {\n  width: auto;\n  padding: 0;\n  display: inline-block;\n  background-color: inherit;\n}\nol.bimlas-locator {\n  list-style-type: none;\n  margin: 0;\n  padding-left: 0;\n}\nol.bimlas-locator ol {\n  margin-left: 0.75em;\n  padding-left: 0.3em;\n  border-left: 1px dashed;\n}\nli.toc-item.bimlas-locator, .tc-menu-list-item.bimlas-locator {\n  margin-top: 3px;\n  margin-bottom: 0;\n}\n.tc-menu-list-item.bimlas-locator &gt; .tc-droppable {\n  display: inline-block;\n}\n.tc-block-dropdown.tc-search-drop-down .bimlas-locator a {\n  padding: 0;\n}\n.tc-block-dropdown.tc-search-drop-down .bimlas-locator a:hover {\n  background-color: initial;\n}\nbutton.bimlas-locator svg {\n  margin: 0 0.25em;\n}\nbutton.bimlas-locator.active svg {\n  fill: &lt;&lt;colour dirty-indicator&gt;&gt;;\n}\n.bimlas-locator.right {\n  float: right;\n  margin-right: 1em;\n}\n.bimlas-locator.context-settings {\n  border-width: 1px;\n  border-style: dashed;\n  padding: 0.5em;\n}&quot;
+        },
+        &quot;$:/plugins/bimlas/locator/templates/context-item&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/bimlas/locator/templates/context-item&quot;,
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;&lt;li class=\&quot;toc-item\&quot;&gt;\n  {{||$:/plugins/bimlas/locator/buttons/go-down-to-context}}\n  &lt;$list filter=\&quot;[title&lt;contextState&gt;get[template-of-context-items]] [title&lt;__templateOfContextItems__&gt;] -[[]] +[first[]]\&quot; variable=\&quot;template\&quot;&gt;\n    &lt;$transclude tiddler=&lt;&lt;template&gt;&gt;/&gt;\n  &lt;/$list&gt;\n&lt;/li&gt;&quot;
+        },
+        &quot;$:/plugins/bimlas/locator/templates/context-settings&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/bimlas/locator/templates/context-settings&quot;,
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;\\define field-of-relationship()\n  Tree is based on field:&lt;br/&gt;\n  &lt;$select tiddler=&lt;&lt;contextState&gt;&gt; field=\&quot;field-of-relationship\&quot; default=&lt;&lt;defaultFieldOfRelationship&gt;&gt;&gt;\n    &lt;$list filter=\&quot;[locator-enlist-relationship-fields[]]\&quot; variable=\&quot;currentField\&quot;&gt;\n      &lt;option value=&lt;&lt;currentField&gt;&gt;&gt;\n        &lt;$list filter=\&quot;[subfilter&lt;filter-unfiltered-view-context-items&gt;count[]]\&quot; variable=\&quot;count\&quot;&gt;\n          (&lt;&lt;count&gt;&gt;) &lt;&lt;currentField&gt;&gt;\n        &lt;/$list&gt;\n      &lt;/option&gt;\n    &lt;/$list&gt;\n  &lt;/$select&gt;\n\\end\n\n\\define template-of-context-items()\n  Template of context items:&lt;br/&gt;\n  &lt;$select tiddler=&lt;&lt;contextState&gt;&gt; field=\&quot;template-of-context-items\&quot; default=&lt;&lt;__templateOfContextItems__&gt;&gt;&gt;\n    &lt;$list filter=\&quot;[all[tiddlers+shadows]tag[$:/tags/bimlas/locator/context-item-templates]]\&quot;&gt;\n      &lt;option value=&lt;&lt;currentTiddler&gt;&gt;&gt;\n        &lt;$transclude field=\&quot;caption\&quot;&gt;&lt;$view field=\&quot;title\&quot;/&gt;&lt;/$transclude&gt;\n      &lt;/option&gt;\n    &lt;/$list&gt;\n  &lt;/$select&gt;\n\\end\n\n&lt;$list filter=\&quot;[title&lt;contextState&gt;field:context-settings-opened[yes]]\&quot;&gt;\n  &lt;div class=\&quot;bimlas-locator context-settings\&quot;&gt;\n    &lt;&lt;field-of-relationship&gt;&gt;&lt;br/&gt;\n    &lt;&lt;template-of-context-items&gt;&gt;&lt;br/&gt;\n    &lt;$checkbox\n      tiddler=&lt;&lt;contextState&gt;&gt;\n      field=\&quot;invert-direction\&quot;\n      checked=\&quot;yes\&quot;\n      unchecked=\&quot;no\&quot;\n      default=\&quot;no\&quot;\n    &gt;\n      Invert direction\n    &lt;/$checkbox&gt;&lt;br/&gt;\n    &lt;$checkbox\n      tiddler=&lt;&lt;contextState&gt;&gt;\n      field=\&quot;allow-to-open-leaves\&quot;\n      checked=\&quot;yes\&quot;\n      unchecked=\&quot;no\&quot;\n      default=\&quot;no\&quot;\n    &gt;\n      Allow to open leaves\n    &lt;/$checkbox&gt;&lt;br/&gt;\n    {{$:/plugins/bimlas/locator/buttons/open-field-settings}}\n  &lt;/div&gt;\n&lt;/$list&gt;\n&quot;
+        },
+        &quot;$:/plugins/bimlas/locator/templates/field-names&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/bimlas/locator/templates/field-names&quot;,
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;\\define close-actions()\n  &lt;$action-listops $tiddler=&lt;&lt;contextState&gt;&gt; $field=\&quot;opened-fields-filters\&quot; $subfilter=\&quot;-[&lt;currentField&gt;]\&quot;/&gt;\n\\end\n\n\\define open-actions()\n  &lt;$action-listops $tiddler=&lt;&lt;contextState&gt;&gt; $field=\&quot;opened-fields-filters\&quot; $subfilter=\&quot;[&lt;currentField&gt;]\&quot;/&gt;\n\\end\n\n\\define closed()\n  &lt;$button class=&lt;&lt;fieldButtonClass&gt;&gt; actions=&lt;&lt;open-actions&gt;&gt;&gt;\n    {{$:/core/images/down-arrow}} &lt;&lt;currentField&gt;&gt;\n  &lt;/$button&gt;\n  {{$:/plugins/bimlas/locator/buttons/remove-filters-of-current-field}}\n\\end\n\n\\define opened()\n  &lt;$button class=&lt;&lt;fieldButtonClass&gt;&gt; actions=&lt;&lt;close-actions&gt;&gt;&gt;\n    {{$:/core/images/up-arrow}} &lt;&lt;currentField&gt;&gt;\n  &lt;/$button&gt;\n  {{$:/plugins/bimlas/locator/buttons/remove-filters-of-current-field}}\n  {{$:/plugins/bimlas/locator/templates/field-values}}\n\\end\n\n\\define field-names() [title&lt;intersectionState&gt;] [title&lt;differenceState&gt;] +[locator-selected-field-names[]] [subfilter&lt;filterContextItems&gt;fields[]locator-enabled-fields&lt;typeOfFieldsFilter&gt;] +[sort[]]\n\\define has-field-value-to-list() [subfilter&lt;filterContextItems&gt;has&lt;currentField&gt;search:$(currentField)$&lt;searchedFieldValue&gt;] [subfilter&lt;filter-selected-field-values&gt;] +[first[]]\n\n&lt;ol class=\&quot;bimlas-locator\&quot;&gt;\n  &lt;$list filter=&lt;&lt;field-names&gt;&gt; variable=\&quot;currentField\&quot;&gt;\n    &lt;$list filter=&lt;&lt;has-field-value-to-list&gt;&gt; variable=\&quot;null\&quot;&gt;\n      &lt;$set name=\&quot;recursiveFilteringOfCurrentFieldAvailable\&quot; filter=\&quot;[&lt;recursiveFilteringAvailable&gt;regexp[yes]] [locator-enlist-relationship-fields&lt;currentField&gt;] +[count[]regexp[2]]\&quot; value=\&quot;yes\&quot; emptyValue=\&quot;no\&quot;&gt;\n        &lt;$set name=\&quot;fieldButtonClass\&quot; filter=\&quot;[subfilter&lt;filter-selected-field-values&gt;first[]]\&quot; value=&lt;&lt;link-button-class additionalClasses:\&quot;active\&quot;&gt;&gt; emptyValue=&lt;&lt;link-button-class&gt;&gt;&gt;\n          &lt;li class=&lt;&lt;menu-list-item-class&gt;&gt;&gt;\n            &lt;$list filter=\&quot;[title&lt;contextState&gt;contains:opened-fields-filters&lt;currentField&gt;]\&quot; emptyMessage=&lt;&lt;closed&gt;&gt;&gt;&lt;&lt;opened&gt;&gt;&lt;/$list&gt;\n          &lt;/li&gt;\n        &lt;/$set&gt;\n      &lt;/$set&gt;\n    &lt;/$list&gt;\n  &lt;/$list&gt;\n&lt;/ol&gt;&quot;
+        },
+        &quot;$:/plugins/bimlas/locator/templates/field-value-template&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/bimlas/locator/templates/field-value-template&quot;,
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;&lt;$list filter=\&quot;[[$:/config/bimlas/locator/fields/]addsuffix&lt;currentField&gt;get[text]]\&quot; emptyMessage={{$:/plugins/bimlas/locator/field-templates/text}} variable=\&quot;template\&quot;&gt;\n  &lt;$transclude tiddler=&lt;&lt;template&gt;&gt;/&gt;\n&lt;/$list&gt;&quot;
+        },
+        &quot;$:/plugins/bimlas/locator/templates/field-values&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/bimlas/locator/templates/field-values&quot;,
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;\\define remove-filtering-of-current-field()\n  &lt;$action-setfield $tiddler=&lt;&lt;intersectionState&gt;&gt; $index=&lt;&lt;currentField&gt;&gt; $value=\&quot;\&quot;/&gt;\n  &lt;$action-setfield $tiddler=&lt;&lt;differenceState&gt;&gt; $index=&lt;&lt;currentField&gt;&gt; $value=\&quot;\&quot;/&gt;\n  &lt;$list filter=\&quot;[&lt;recursiveFilteringOfCurrentFieldAvailable&gt;regexp[yes]]\&quot; variable=\&quot;null\&quot;&gt;\n    &lt;$action-setfield $tiddler=\&quot;$:/state/bimlas/locator/search/recursive-filters/\&quot; $index=&lt;&lt;currentField&gt;&gt; $value=\&quot;\&quot;/&gt;\n  &lt;/$list&gt;\n\\end\n\n\\define remove-from-intersection-state()\n  &lt;$action-listops $tiddler=&lt;&lt;intersectionState&gt;&gt; $index=&lt;&lt;currentField&gt;&gt; $subfilter=\&quot;-[all[current]]\&quot;/&gt;\n\\end\n\n\\define remove-from-difference-state()\n  &lt;$action-listops $tiddler=&lt;&lt;differenceState&gt;&gt; $index=&lt;&lt;currentField&gt;&gt; $subfilter=\&quot;-[all[current]]\&quot;/&gt;\n\\end\n\n\\define activate-actions()\n  &lt;&lt;__beforeActivateActions__&gt;&gt;\n  &lt;$action-listops $tiddler=&lt;&lt;__filterState__&gt;&gt; $index=&lt;&lt;currentField&gt;&gt; $subfilter=\&quot;[all[current]]\&quot;/&gt;\n\\end\n\n\\define inactivate-actions()\n  &lt;$action-listops $tiddler=&lt;&lt;__filterState__&gt;&gt; $index=&lt;&lt;currentField&gt;&gt; $subfilter=\&quot;-[all[current]]\&quot;/&gt;\n  &lt;$list filter=\&quot;[&lt;recursiveFilteringOfCurrentFieldAvailable&gt;regexp[yes]]\&quot; variable=\&quot;null\&quot;&gt;\n    &lt;$action-listops $tiddler=\&quot;$:/state/bimlas/locator/search/recursive-filters/\&quot; $index=&lt;&lt;currentField&gt;&gt; $subfilter=\&quot;-[all[current]]\&quot;/&gt;\n  &lt;/$list&gt;\n\\end\n\n\\define button-inactive()\n  &lt;$button tooltip=&lt;&lt;__tooltip__&gt;&gt; class=&lt;&lt;link-button-class&gt;&gt; actions=&lt;&lt;activate-actions&gt;&gt;&gt;\n    &lt;&lt;__icon__&gt;&gt;\n  &lt;/$button&gt;\n\\end\n\n\\define button-active()\n  &lt;$button tooltip=&lt;&lt;__tooltip__&gt;&gt; class=&lt;&lt;link-button-class additionalClasses:\&quot;active\&quot;&gt;&gt; actions=&lt;&lt;inactivate-actions&gt;&gt;&gt;\n    &lt;&lt;__icon__&gt;&gt;\n  &lt;/$button&gt;\n\\end\n\n\\define toggle-button(filterState icon beforeActivateActions tooltip)\n  &lt;$list filter=\&quot;[title&lt;__filterState__&gt;locator-selected-field-values&lt;currentField&gt;is[current]]\&quot; emptyMessage=&lt;&lt;button-inactive&gt;&gt;&gt;\n    &lt;&lt;button-active&gt;&gt;\n  &lt;/$list&gt;\n\\end\n\n\\define field-values-of-context-items() [subfilter&lt;filterContextItems&gt;locator-enlist-field-values&lt;currentField&gt;search:title&lt;searchedFieldValue&gt;] [subfilter&lt;filter-selected-field-values&gt;] +[sort[]]\n\n&lt;ol class=\&quot;bimlas-locator\&quot;&gt;\n  &lt;li class=&lt;&lt;menu-list-item-class&gt;&gt;&gt;\n    &lt;$tiddler tiddler=\&quot;ANY-VALUE\&quot;&gt;\n      &lt;$macrocall\n        $name=\&quot;toggle-button\&quot;\n        filterState=&lt;&lt;intersectionState&gt;&gt;\n        icon={{$:/core/images/new-button}}\n        beforeActivateActions=&lt;&lt;remove-filtering-of-current-field&gt;&gt;\n        tooltip=\&quot;Toggle filtering to any value\&quot;\n      /&gt;\n      &lt;$macrocall\n        $name=\&quot;toggle-button\&quot;\n        filterState=&lt;&lt;differenceState&gt;&gt;\n        icon={{$:/core/images/close-button}}\n        beforeActivateActions=&lt;&lt;remove-filtering-of-current-field&gt;&gt;\n        tooltip=\&quot;Toggle filtering to any value\&quot;\n      /&gt;\n      __Any value__\n    &lt;/$tiddler&gt;\n  &lt;/li&gt;\n  &lt;$list filter=\&quot;[subfilter&lt;field-values-of-context-items&gt;regexp[^ANY-VALUE$]count[]] -[[1]]\&quot; variable=\&quot;null\&quot;&gt;\n    &lt;$list filter=&lt;&lt;field-values-of-context-items&gt;&gt;&gt;\n      &lt;li class=&lt;&lt;menu-list-item-class&gt;&gt;&gt;\n        &lt;$macrocall\n          $name=\&quot;toggle-button\&quot;\n          filterState=&lt;&lt;intersectionState&gt;&gt;\n          icon={{$:/core/images/new-button}}\n          beforeActivateActions=&lt;&lt;remove-from-difference-state&gt;&gt;\n          tooltip=\&quot;Toggle filtering to this value\&quot;\n        /&gt;\n        &lt;$macrocall\n          $name=\&quot;toggle-button\&quot;\n          filterState=&lt;&lt;differenceState&gt;&gt;\n          icon={{$:/core/images/close-button}}\n          beforeActivateActions=&lt;&lt;remove-from-intersection-state&gt;&gt;\n          tooltip=\&quot;Toggle filtering to this value\&quot;\n        /&gt;\n        &lt;$list filter=\&quot;[&lt;recursiveFilteringOfCurrentFieldAvailable&gt;regexp[yes]]\&quot; variable=\&quot;null\&quot;&gt;\n          &lt;$macrocall\n            $name=\&quot;toggle-button\&quot;\n            filterState=\&quot;$:/state/bimlas/locator/search/recursive-filters/\&quot;\n            icon={{$:/core/images/link}}\n            tooltip=\&quot;Toggle recursive filtering to this value\&quot;\n          /&gt;\n        &lt;/$list&gt;\n        &lt;$macrocall\n          $name=\&quot;droppable-menu-list-item\&quot;\n          content={{$:/plugins/bimlas/locator/templates/field-value-template}}\n          actions={{$:/plugins/bimlas/locator/actions/add-field-value}}\n        /&gt;\n      &lt;/li&gt;\n    &lt;/$list&gt;\n  &lt;/$list&gt;\n&lt;/ol&gt;\n&quot;
+        },
+        &quot;$:/plugins/bimlas/locator/templates/fields-filter&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/bimlas/locator/templates/fields-filter&quot;,
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;\\define open-actions()\n  &lt;$action-listops $tiddler=&lt;&lt;contextState&gt;&gt; $field=\&quot;opened-fields-filters\&quot; $subfilter=\&quot;[[FIELDS-FILTER]]\&quot;/&gt;\n\\end\n\n\\define close-actions()\n  &lt;$action-listops $tiddler=&lt;&lt;contextState&gt;&gt; $field=\&quot;opened-fields-filters\&quot; $subfilter=\&quot;-[[FIELDS-FILTER]]\&quot;/&gt;\n\\end\n\n\\define opened()\n  &lt;$button class=&lt;&lt;fieldsFilterButtonClass&gt;&gt; actions=&lt;&lt;close-actions&gt;&gt;&gt;\n    {{$:/core/images/up-arrow}} __Filter by fields__\n  &lt;/$button&gt;\n  {{$:/plugins/bimlas/locator/buttons/remove-filters}}\n  &lt;ol class=\&quot;bimlas-locator\&quot;&gt;\n    {{$:/plugins/bimlas/locator/templates/field-names}}\n  &lt;/ol&gt;\n\\end\n\n\\define closed()\n  &lt;$button class=&lt;&lt;fieldsFilterButtonClass&gt;&gt; actions=&lt;&lt;open-actions&gt;&gt;&gt;\n    {{$:/core/images/down-arrow}} __Filter by fields__\n  &lt;/$button&gt;\n  {{$:/plugins/bimlas/locator/buttons/remove-filters}}\n\\end\n\n&lt;$set name=\&quot;fieldsFilterButtonClass\&quot; filter=\&quot;[subfilter&lt;filter-selected-field-values&gt;first[]]\&quot; value=&lt;&lt;link-button-class additionalClasses:\&quot;active\&quot;&gt;&gt; emptyValue=&lt;&lt;link-button-class&gt;&gt;&gt;\n  &lt;$vars typeOfFieldsFilter=\&quot;nested\&quot;&gt;\n    &lt;$list filter=\&quot;[title&lt;contextState&gt;contains:opened-fields-filters[FIELDS-FILTER]]\&quot; emptyMessage=&lt;&lt;closed&gt;&gt;&gt;&lt;&lt;opened&gt;&gt;&lt;/$list&gt;\n  &lt;/$vars&gt;\n&lt;/$set&gt;&quot;
+        },
+        &quot;$:/plugins/bimlas/locator/templates/history-item&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/bimlas/locator/templates/history-item&quot;,
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;{{||$:/plugins/bimlas/locator/buttons/go-up-to-context}}\n{{||$:/plugins/bimlas/locator/field-templates/link}}&quot;
+        },
+        &quot;$:/plugins/bimlas/locator/templates/history&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/bimlas/locator/templates/history&quot;,
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;&lt;$list filter=&lt;&lt;filter-history&gt;&gt;&gt;\n  &lt;$macrocall $name=\&quot;droppable-menu-list-item\&quot; content={{$:/plugins/bimlas/locator/templates/history-item}} actions={{$:/plugins/bimlas/locator/actions/move-to-another-context}}/&gt;\n&lt;/$list&gt;\n&quot;
+        },
+        &quot;$:/plugins/bimlas/locator/templates/list-of-context-items&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/bimlas/locator/templates/list-of-context-items&quot;,
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;&lt;$list filter=&lt;&lt;filterContextItems&gt;&gt;&gt;\n  &lt;$macrocall\n    $name=\&quot;droppable-menu-list-item\&quot;\n    content={{$:/plugins/bimlas/locator/templates/context-item}}\n    actions={{$:/plugins/bimlas/locator/actions/move-to-another-context}}\n  /&gt;\n&lt;/$list&gt;&quot;
+        },
+        &quot;$:/plugins/bimlas/locator/templates/list-of-links-in-text&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/bimlas/locator/templates/list-of-links-in-text&quot;,
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;&lt;$list filter=\&quot;[subfilter&lt;filterContextItems&gt;sort[]]\&quot;&gt;\n  {{||$:/plugins/bimlas/locator/templates/context-item}}\n&lt;/$list&gt;&quot;
+        },
+        &quot;$:/plugins/bimlas/locator/templates/search-toolbar&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/bimlas/locator/templates/search-toolbar&quot;,
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;&lt;$vars\n  titleOfNewTiddler={{$:/temp/search}}\n&gt;\n  {{$:/plugins/bimlas/locator/buttons/clear-search-input}}\n  {{$:/plugins/bimlas/locator/buttons/copy-filter-to-advanced-search}}\n  {{$:/plugins/bimlas/locator/buttons/create-new-tiddler}}\n  {{$:/plugins/bimlas/locator/buttons/open-field-settings}}\n&lt;/$vars&gt;\n&quot;
+        },
+        &quot;$:/plugins/bimlas/locator/templates/view-toolbar&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/bimlas/locator/templates/view-toolbar&quot;,
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;&lt;$list filter=\&quot;[title&lt;contextState&gt;!field:invert-direction[yes]]\&quot; variable=\&quot;null\&quot;&gt;\n  &lt;$list filter=\&quot;[subfilter&lt;filter-field-of-relationship&gt;!regexp[^LINKS-IN-TEXT$]]\&quot;&gt;\n    {{||$:/plugins/bimlas/locator/buttons/create-new-tiddler}}\n  &lt;/$list&gt;\n  {{$:/plugins/bimlas/locator/buttons/search-in-context}}\n&lt;/$list&gt;\n{{$:/plugins/bimlas/locator/buttons/collapse-history}}\n{{$:/plugins/bimlas/locator/buttons/toggle-context-settings}}&quot;
+        },
+        &quot;$:/plugins/bimlas/locator/viewtemplate/field-list&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/bimlas/locator/viewtemplate/field-list&quot;,
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;&lt;table class=\&quot;tc-view-field-table\&quot;&gt;\n  &lt;tbody&gt;\n    &lt;$list filter=\&quot;[all[current]fields[]locator-enabled-fields[]sort[title]] -text\&quot; variable=\&quot;currentField\&quot;&gt;\n      &lt;tr class=\&quot;tc-view-field\&quot;&gt;\n        &lt;td class=\&quot;tc-view-field-name\&quot;&gt;\n          &lt;$text text=&lt;&lt;currentField&gt;&gt;/&gt;\n        &lt;/td&gt;\n        &lt;td class=\&quot;tc-view-field-value\&quot;&gt;\n          &lt;$list filter=\&quot;[all[current]locator-enlist-field-values&lt;currentField&gt;]\&quot;&gt;\n            {{||$:/plugins/bimlas/locator/templates/field-value-template}}\n          &lt;/$list&gt;\n        &lt;/td&gt;\n      &lt;/tr&gt;\n    &lt;/$list&gt;\n  &lt;/tbody&gt;\n&lt;/table&gt;&quot;
+        },
+        &quot;$:/plugins/bimlas/locator/viewtemplate/fields-info&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/bimlas/locator/viewtemplate/fields-info&quot;,
+            &quot;caption&quot;: &quot;{{$:/language/TiddlerInfo/Fields/Caption}} (Locator)&quot;,
+            &quot;list-after&quot;: &quot;$:/core/ui/TiddlerInfo/Fields&quot;,
+            &quot;tags&quot;: &quot;$:/tags/TiddlerInfo&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;{{||$:/plugins/bimlas/locator/viewtemplate/field-list}}\n\n{{$:/plugins/bimlas/locator/buttons/open-field-settings}}&quot;
+        },
+        &quot;$:/plugins/bimlas/locator/viewtemplate/open-in-sidebar&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/bimlas/locator/viewtemplate/open-in-sidebar&quot;,
+            &quot;tags&quot;: &quot;$:/tags/ViewToolbar&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;caption&quot;: &quot;{{$:/core/images/chevron-right}} locator sidebar&quot;,
+            &quot;description&quot;: &quot;Browse hierarchy of tag in Locator sidebar&quot;,
+            &quot;list-before&quot;: &quot;$:/core/ui/Buttons/open-window&quot;,
+            &quot;text&quot;: &quot;\\whitespace trim\n&lt;$button tooltip=\&quot;Browse hierarchy of tag in Locator sidebar\&quot; aria-label=\&quot;locator sidebar\&quot; class=&lt;&lt;tv-config-toolbar-class&gt;&gt;&gt;\n&lt;$vars\n  contextState=\&quot;$:/state/bimlas/locator/view/context/\&quot;\n  intersectionState=\&quot;$:/state/bimlas/locator/view/intersection/\&quot;\n  differenceState=\&quot;$:/state/bimlas/locator/view/difference/\&quot;\n&gt;\n  {{||$:/plugins/bimlas/locator/actions/add-to-history}}\n&lt;/$vars&gt;\n&lt;$list filter=\&quot;[&lt;tv-config-toolbar-icons&gt;prefix[yes]]\&quot; variable=\&quot;listItem\&quot;&gt;\n{{$:/core/images/chevron-right}}\n&lt;/$list&gt;\n&lt;$list filter=\&quot;[&lt;tv-config-toolbar-text&gt;prefix[yes]]\&quot;&gt;\n&lt;span class=\&quot;tc-btn-text\&quot;&gt;\n&lt;$text text=\&quot; \&quot;/&gt;\n&lt;$text text=\&quot;locator sidebar\&quot;/&gt;\n&lt;/span&gt;\n&lt;/$list&gt;\n&lt;/$button&gt;\n&quot;
+        }
+    }
+}</pre>
+</div>
+<div author="LinOnetwo" core-version="&gt;=5.1.22" dependents="" description="VSCode style opened files top bar" list="Readme LICENSE" name="Opened Tiddlers Bar" plugin-type="plugin" title="$:/plugins/linonetwo/opened-tiddlers-bar" type="application/json" version="0.0.1">
+<pre>{
+    &quot;tiddlers&quot;: {
+        &quot;$:/plugins/linonetwo/opened-tiddlers-bar/AboveStory&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/linonetwo/opened-tiddlers-bar/AboveStory&quot;,
+            &quot;creator&quot;: &quot;[[Jeffrey Wikinson]]&quot;,
+            &quot;modifier&quot;: &quot;LinOnetwo&quot;,
+            &quot;tags&quot;: &quot;$:/tags/AboveStory&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;&lt;&lt;opened-tiddlers-bar&gt;&gt;&quot;
+        },
+        &quot;$:/plugins/linonetwo/opened-tiddlers-bar/LICENSE&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/linonetwo/opened-tiddlers-bar/LICENSE&quot;,
+            &quot;creator&quot;: &quot;LinOnetwo&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;The MIT License (MIT)\n\nCopyright (c) 2015 Jeffrey Wikinson aka Buggyj\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \&quot;Software\&quot;), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \&quot;AS IS\&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. &quot;
+        },
+        &quot;$:/plugins/linonetwo/opened-tiddlers-bar/Readme&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/linonetwo/opened-tiddlers-bar/Readme&quot;,
+            &quot;creator&quot;: &quot;LinOnetwo&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;!! Features\n\nThis plugin provides VSCode style \&quot;Opened Tiddlers\&quot; top bar\n\n!! Credits\n\nThis plugin is based on $:/plugins/bj/storytabs , which is in MIT license, thank you, Buggyj!\n&quot;
+        },
+        &quot;$:/plugins/linonetwo/opened-tiddlers-bar/style.css&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/linonetwo/opened-tiddlers-bar/style.css&quot;,
+            &quot;text&quot;: &quot;/** 顶部tab栏 */\nsection.story-backdrop {\n  position: fixed;\n  top: 0;\n  z-index: 1000;\n  width: 100vw;\n  overflow-x: auto;\n  left: 0;\n  white-space: nowrap;\n  overflow: -moz-scrollbars-none;\n  scrollbar-width: none;\n}\nsection.story-backdrop::-webkit-scrollbar {\n  display: none;\n}\nsection.story-backdrop &gt; p, section.story-backdrop &gt; p &gt; div.tc-tab-buttons {\n  width: 100%;\n  margin: 0;\n  display: flex;\n  background-color: white;\n}\n\n\nsection.story-backdrop button {\n  border: none;\n  border-radius: 0;\n  margin: 0;\n  padding: 5px 10px;\n  padding-right: 2px;\n}\n/** x button */\nsection.story-backdrop button:not(.tc-tab) {\n  border: none;\n  border-radius: 0;\n  margin: 0;\n  padding: 0 5px;\n  opacity: 0;\n  background-color: transparent;\n}\nsection.story-backdrop button:not(.tc-tab):hover {\n  opacity: 1;\n}\nsection.story-backdrop button.tc-tab:not(.tc-tab-selected):hover {\n  border-bottom: 2px solid gray;\n}\nsection.story-backdrop button.tc-tab:nth-child(2) {\n  margin-left: -1em;\n}\n.tc-tab-buttons {\n  padding: 0;\n  margin: 0;\n}\n\ndiv.tc-page-container {\n  margin-top: 30px;\n}\n\ndiv.tc-tiddler-title {\n  top: 24px;\n}\ndiv.tc-editor-toolbar {\n  top: calc(35px + 24px);\n}\n/** 收起侧边栏的按钮 */\n.tc-topbar-right {\n  top: 18px;\n}\n&quot;,
+            &quot;creator&quot;: &quot;LinOnetwo&quot;,
+            &quot;tags&quot;: &quot;$:/tags/Stylesheet&quot;,
+            &quot;type&quot;: &quot;text/css&quot;
+        },
+        &quot;$:/plugins/linonetwo/opened-tiddlers-bar/ui&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/linonetwo/opened-tiddlers-bar/ui&quot;,
+            &quot;creator&quot;: &quot;[[Jeffrey Wikinson]]&quot;,
+            &quot;modifier&quot;: &quot;LinOnetwo&quot;,
+            &quot;tags&quot;: &quot;$:/tags/Macro&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;\\define opened-tiddlers-bar()\n\\whitespace trim\n&lt;div class=\&quot;tc-tab-buttons\&quot; &gt;\n  &lt;$list filter=\&quot;[list[$:/StoryList]]\&quot; history=\&quot;$:/HistoryList\&quot; variable=\&quot;currentTab\&quot;&gt;\n    &lt;$reveal type=\&quot;match\&quot; state=\&quot;$:/HistoryList!!current-tiddler\&quot; text=&lt;&lt;currentTab&gt;&gt;&gt;\n      &lt;div style=\&quot;display:inline\&quot;&gt;\n        &lt;$button to=&lt;&lt;currentTab&gt;&gt; class=\&quot;tc-tab-selected tc-tab\&quot;&gt;\n          &lt;$view tiddler=&lt;&lt;currentTab&gt;&gt; field=\&quot;name\&quot;&gt;\n          &lt;$view tiddler=&lt;&lt;currentTab&gt;&gt; field=\&quot;title\&quot; /&gt;&lt;/$view&gt;\n          &lt;$button message=\&quot;tm-close-tiddler\&quot; param=&lt;&lt;currentTab&gt;&gt; class=\&quot;tc-tab-selected\&quot;&gt;\n            &amp;times;\n          &lt;/$button&gt;\n        &lt;/$button&gt;\n      &lt;/div&gt;\n    &lt;/$reveal&gt;\n    &lt;$reveal type=\&quot;nomatch\&quot; state=\&quot;$:/HistoryList!!current-tiddler\&quot; text=&lt;&lt;currentTab&gt;&gt;&gt;\n      &lt;div&gt;\n        &lt;$button to=&lt;&lt;currentTab&gt;&gt; class=\&quot;tc-tab\&quot; &gt;\n          &lt;$view tiddler=&lt;&lt;currentTab&gt;&gt; field=\&quot;name\&quot;&gt;\n            &lt;$view tiddler=&lt;&lt;currentTab&gt;&gt; field=\&quot;title\&quot; /&gt;\n          &lt;/$view&gt;\n          &lt;$button message=\&quot;tm-close-tiddler\&quot; param=&lt;&lt;currentTab&gt;&gt;&gt;\n            &amp;times;\n          &lt;/$button&gt;\n        &lt;/$button&gt;\n      &lt;/div&gt;\n    &lt;/$reveal&gt;\n  &lt;/$list&gt;\n&lt;/div&gt;\n\\end\n&quot;
+        }
+    }
+}</pre>
 </div>
 <div dependents="$:/plugins/tiddlywiki/codemirror-mode-xml" description="Markdown highlighting mode for CodeMirror" list="readme" name="CodeMirror Mode Markdown" parent-plugin="$:/plugins/tiddlywiki/codemirror" plugin-type="plugin" title="$:/plugins/tiddlywiki/codemirror-mode-markdown" type="application/json" version="5.1.22">
 <pre>{
@@ -14231,7 +14743,7 @@ fi
 <div created="20200607064028393" modified="20200607070246684" title="$:/state/tab--1498284803">
 <pre>$:/core/ui/AdvancedSearch/System</pre>
 </div>
-<div created="20200607035244754" modified="20200610142220114" title="$:/state/tab--1963855381">
+<div created="20200607035244754" modified="20200620153617884" title="$:/state/tab--1963855381">
 <pre>$:/core/ui/ControlPanel/Palette</pre>
 </div>
 <div created="20200607035343093" modified="20200607082040136" title="$:/state/tab--2112689675">
@@ -14249,8 +14761,8 @@ fi
 <div created="20200607043855360" modified="20200607044841744" title="$:/state/tab-1163638994">
 <pre>$:/core/ui/MoreSideBar/Plugins/Languages</pre>
 </div>
-<div created="20200607033957495" modified="20200611021936545" title="$:/state/tab-1749438307">
-<pre>$:/core/ui/ControlPanel/Saving</pre>
+<div created="20200607033957495" modified="20200620153608121" title="$:/state/tab-1749438307">
+<pre>$:/core/ui/ControlPanel/Appearance</pre>
 </div>
 <div created="20200607083135165" modified="20200613162602674" title="$:/state/tab-2065006209">
 <pre>$:/core/ui/ControlPanel/Saving/General</pre>
@@ -14298,9 +14810,9 @@ fi
 <pre>show</pre>
 </div>
 <div title="$:/status/RequireReloadDueToPluginChange">
-<pre>no</pre>
+<pre>yes</pre>
 </div>
-<div list="[[crontab PATH 变量]] Tags" title="$:/StoryList">
+<div list="Tags" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200607063942744" modified="20200607070244679" title="$:/temp/advancedsearch">
@@ -14354,11 +14866,11 @@ fi
         },
         &quot;$:/info/browser/screen/width&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/width&quot;,
-            &quot;text&quot;: &quot;1792&quot;
+            &quot;text&quot;: &quot;1920&quot;
         },
         &quot;$:/info/browser/screen/height&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/height&quot;,
-            &quot;text&quot;: &quot;1120&quot;
+            &quot;text&quot;: &quot;1080&quot;
         },
         &quot;$:/info/browser/language&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/language&quot;,
@@ -15326,8 +15838,26 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div created="20200607035632559" modified="20200607035632559" tags="$:/tags/ServerConnection" title="$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.22/index.html" url="https://tiddlywiki.com/library/v5.1.22/index.html">
 <pre>loaded</pre>
 </div>
-<div created="20200607035302473" modified="20200607035309981" title="$:/theme">
-<pre>$:/themes/tiddlywiki/snowwhite</pre>
+<div created="20200607035302473" modified="20200620153616086" title="$:/theme">
+<pre>$:/themes/linonetwo/itonnote</pre>
+</div>
+<div author="LinOnetwo" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Notion and VSCode inspired theme" name="ItonNote Theme" plugin-priority="1" plugin-type="theme" title="$:/themes/linonetwo/itonnote" type="application/json" version="0.1.2">
+<pre>{
+    &quot;tiddlers&quot;: {
+        &quot;$:/themes/linonetwo/itonnote/base&quot;: {
+            &quot;title&quot;: &quot;$:/themes/linonetwo/itonnote/base&quot;,
+            &quot;tags&quot;: &quot;$:/tags/Stylesheet&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;/*\n** Start with the vanilla theme and normalize CSS reset, and then belay some of its effects\n*/\n\n{{$:/themes/tiddlywiki/vanilla/base}}\n\n/**\n  代码样式\n*/\n\np &gt; code, li &gt; code {\n  box-decoration-break: clone;\n  border: none;\n  padding: .1rem .3rem .2rem;\n  border-radius: .2rem;\n\n  background: linear-gradient(19deg,#DDD,#EEE);\n  color: #333;\n}\n\n.hljs {\n  background-color: white;\n  border: none;\n  box-shadow: rgba(15, 15, 15, 0.1) 0px 0px 5px 1px, rgba(15, 15, 15, 0.1) 0px 2px 10px\n}\n\n/**\n  卡片、编辑器和背景样式\n*/\n\n/** 背景 */\nbody.tc-body {\n  background-color: white;\n}\n/** 给卡片加上阴影 */\n.tc-tiddler-frame {\n  box-shadow: rgba(15, 15, 15, 0.1) 0px 0px 5px 1px, rgba(15, 15, 15, 0.1) 0px 2px 10px;\n}\n/** 顶部标题栏半透明 */\n:root {\n  --menubar-height: 29px;\n}\n\n.tc-tiddler-title {\n  background: rgba(255, 255, 255, 0.5);\n  backdrop-filter: blur(10px);\n  /** fix menubar with sticky title https://github.com/Jermolene/TiddlyWiki5/issues/4471#issuecomment-594456486*/\n  top: var(--menubar-height);\n}\n/** 编辑器工具栏 */\n.tc-editor-toolbar {\n  background: rgba(255, 255, 255, 0.5);\n  backdrop-filter: blur(10px);\n  position: sticky;\n  top: 35px;\n  z-index: 1000;\n}\n.tc-tiddler-preview {\n  overflow: unset;\n}\n.tc-block-dropdown {\n  z-index: 1001;\n}\n\n/** 下拉列表当前鼠标悬浮状态的颜色 */\n.tc-block-dropdown a {\n  transition: background-color 0.2s;\n}\n.tc-block-dropdown a:hover {\n  background-color: #EEEEEE;\n}\n/** 去掉预览除了左边框的边框 */\n.tc-tiddler-preview-preview {\n  border: none;\n  padding-left: 10px;\n  border-left: 1px solid #cccccc;\n}\n/** 去掉代码编辑器的边框 */\n.CodeMirror {\n  border: none;\n}\n/** 去掉所有其它文本编辑框的边框 */\n.tc-tiddler-frame input.tc-edit-texteditor {\n  border: none;\n  background: transparent;\n}\n/** 标题下面的 tag 栏 */\n.tc-edit-tags {\n  border: none;\n  border-bottom: 1px solid #cccccc;\n  padding: 4px 8px 4px 8px;\n}\n\n/**\n\t自定义字体\n*/\n@import url(https://cdn.jsdelivr.net/gh/tonsky/FiraCode@4/distr/fira_code.css);\n\n* {\n  font-variant-ligatures: contextual;\n  font-display: swap;\n}\n\n/* Specify in CSS */\ncode { font-family: 'Fira Code', monospace; }\n\n@supports (font-variation-settings: normal) {\n  code { font-family: 'Fira Code VF', monospace; }\n}\n\n/**\n  按钮样式\n*/\n\n/** 不匹配工具栏上的按钮 */\nbutton:not(.tc-btn-invisible) {\n  color: #333;\n  background-color: rgba(0, 0, 0, 0.03);\n  padding: 5px 10px;\n\tmargin: 2px;\n  border-radius: 5px;\n  border: none;\n  transition: background-color 0.2s;\n  cursor: pointer;\n}\nbutton:not(.tc-btn-invisible) svg {\n\tfill: #666;\n}\n\nbutton:not(.tc-btn-invisible):hover {\n\tbackground-color: rgba(0, 0, 0, 0.05);\n}\n\n/** Tab 上的按钮 */\n.tc-tab-buttons &gt; button {\n\tborder-radius: 0px;\n}\n.tc-tab-buttons button:not(.tc-tab-selected) {\n\tfill: none;\n\tbackground-color: transparent;\n\tborder: none;\n}\n.tc-tab-buttons button:not(.tc-tab-selected):hover {\n\tbackground-color: rgba(0, 0, 0, 0.05);\n}\n.tc-sidebar-lists .tc-tab-buttons button.tc-tab-selected {\n\tborder: none;\n\tborder-bottom: 2px solid silver;\n}\n.tc-tab-buttons button.tc-tab-selected {\n\tborder: none;\n\tborder-bottom: 2px solid silver;\n\tbackground-color: #f4f4f4;\n}\n\n/** 标签 */\nbutton.tc-tag-label, span.tc-tag-label {\n  border-radius: 3px;\n  background-color: rgba(0, 0, 0, 0.1);\n  transition: background-color 0.2s;\n}\nbutton.tc-tag-label, span.tc-tag-label:hover {\n  background-color: rgba(0, 0, 0, 0.2);\n}\n\n/**\n  链接样式\n*/\n\na.tc-tiddlylink, a.tc-tiddlylink:hover, a.tc-tiddlylink:hover {\n  padding: 2px;\n  padding-bottom: 0;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  font-weight: 500;\n  line-height: 1.3;\n  color: #333;\n  border-bottom: 1px solid rgba(55, 53, 47, 0.16);\n  text-decoration: none;\n  transition: background 120ms ease-in 0s;\n}\na:hover {\n  background-color: #EEE;\n}\n\na.tc-tiddlylink-external, a.tc-tiddlylink-external:visited {\n\tpadding: 2px;\n\tborder-bottom: 1px solid #8357d7;\n\ttext-decoration: none;\n  box-decoration-break: clone;\n  font-weight: 700;\n  color: #666;\n}\n\na.tc-tiddlylink-external:hover {\n  background-color: #333;\n  background-image: linear-gradient(19deg, #333 0%, #CCC 100%);\n  background-clip: border-box;\n-webkit-background-clip: text;\n-webkit-text-fill-color: transparent;\n}\n\na.tc-tiddlylink.tc-tiddlylink-resolves.tc-plugin-info.tc-popup-handle.tc-popup-absolute:hover {\n\tbackground-color: #999;\n}\n\n/**\n\t侧边栏\n*/\n\n.tc-page-controls {\n  display: flex;\n  flex-wrap: wrap;\n}\n\n.tc-site-title {\n\tfont-size: 1.75em;\n}\n\n.tc-sidebar-scrollable {\n\toverscroll-behavior: contain;\n\toverflow: -moz-scrollbars-none;\n}\n.tc-sidebar-scrollable::-webkit-scrollbar {\n\twidth: 0 !important\n}\n\n.tc-topbar {\n  z-index: 100;\n}\n\n@media (min-width: 960px) {\n\t.tc-sidebar-scrollable {\n\t  padding: 30px 10px 0px 15px;\n\t}\n}\n\n@media (max-width: 960px) {\n\t.tc-sidebar-header {\n\tmargin-top: 20px;\n\t}\n}\n\n/**\n\t侧边栏搜索框\n*/\n\n.tc-search {\n\tdisplay: flex;\n\tflex-direction: column;\n}\n\n.tc-search &gt; input[type=search] {\n\tflex: 1;\n  border: 1px solid #999;\n}\n/** 隐藏没用的搜索栏按钮 */\n.tc-search &gt; span &gt; button:nth-child(1), .tc-search &gt; span &gt; button:nth-child(2) {\n\tdisplay: none;\n}\n\n.tc-search ~ .tc-block-dropdown-wrapper &gt; .tc-block-dropdown.tc-search-drop-down.tc-popup-handle {\n\twidth: 100%;\n\tmargin: 0;\n\tmargin-bottom: 20px;\n}\n\n/** 标题 */\n\n.tc-site-subtitle {\n  margin-top: 5px;\n}\n\n/**\n\t卡片流\n*/\n\n@media (min-width: 960px) {\n\t.tc-story-river {\n\t  padding: 10px 0 0px 20px;\n\t}\n}\n\n/**\n\t宽屏时隐藏顶部 MenuBar\n*/\n\n@media (min-width: 960px) {\n\tnav.tc-menubar {\n\tdisplay: none !important;\n\t}\n}\n\n/**\n  去除按钮、搜索框选中时的蓝框\n*/\n\nbutton:focus, button:active {\n   outline: none !important;\n   box-shadow: none;\n}\n\n[placeholder]{\n  text-overflow:ellipsis;\n}\n::placeholder{\n  text-overflow:ellipsis;\n}\ninput[type=search] {\n  appearance: none;\n  -webkit-appearance: none;\n}\n\n* {\n  outline: none;\n  outline-color: none;\n  -webkit-font-smoothing: antialiased;\n}\n*:focus {\n  outline: none;\n}\n&quot;
+        },
+        &quot;$:/themes/linonetwo/itonnote/fontLink.tid&quot;: {
+            &quot;title&quot;: &quot;$:/themes/linonetwo/itonnote/fontLink.tid&quot;,
+            &quot;tags&quot;: &quot;[[$:/tags/RawMarkup]]&quot;,
+            &quot;type&quot;: &quot;text/html&quot;,
+            &quot;text&quot;: &quot;&lt;link rel=\&quot;stylesheet\&quot; href=\&quot;https://cdn.jsdelivr.net/gh/tonsky/FiraCode@4/distr/fira_code.css\&quot;&gt;\n&quot;
+        }
+    }
+}</pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.22">
 <pre>{
