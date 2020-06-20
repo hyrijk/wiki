@@ -186,6 +186,8 @@ Error message and password prompt
 
 <li>$:/config/RelinkOnRename</li>
 
+<li>$:/config/WikiParserRules/Inline/wikilink</li>
+
 <li>$:/core</li>
 
 <li>$:/DefaultTiddlers</li>
@@ -198,13 +200,15 @@ Error message and password prompt
 
 <li>$:/GitHub/Username</li>
 
-<li>$:/hidpi-image</li>
+<li>$:/hidpi-image.css</li>
 
 <li>$:/Import</li>
 
 <li>$:/Import!!popup-云开发.md</li>
 
 <li>$:/isEncrypted</li>
+
+<li>$:/itonnote.css</li>
 
 <li>$:/language</li>
 
@@ -213,6 +217,8 @@ Error message and password prompt
 <li>$:/languages/zh-Hans</li>
 
 <li>$:/palette</li>
+
+<li>$:/palettes/Vanilla2</li>
 
 <li>$:/plugins/bimlas/locator</li>
 
@@ -227,6 +233,8 @@ Error message and password prompt
 <li>$:/SiteSubtitle</li>
 
 <li>$:/SiteTitle</li>
+
+<li>$:/state/bimlas/locator/view/context/</li>
 
 <li>$:/state/editpreviewtype</li>
 
@@ -251,6 +259,8 @@ Error message and password prompt
 <li>$:/state/folded/typescript.md</li>
 
 <li>$:/state/showeditpreview</li>
+
+<li>$:/state/ShowPaletteEditor</li>
 
 <li>$:/state/sidebar</li>
 
@@ -297,6 +307,8 @@ Error message and password prompt
 <li>$:/state/toc/TableOfContents-ssh-1578220852</li>
 
 <li>$:/state/toc/TableOfContents/前端-npm-1578220852</li>
+
+<li>$:/state/toc/TableOfContents/前端-react-1578220852</li>
 
 <li>$:/state/tree/$:/tags/</li>
 
@@ -526,6 +538,8 @@ Error message and password prompt
 
 <li>$:/themes/tiddlywiki/vanilla/options/sidebarlayout</li>
 
+<li>$:/themes/tiddlywiki/vanilla/options/stickytitles</li>
+
 <li>$:/view</li>
 
 <li>捕获所有异常</li>
@@ -682,8 +696,8 @@ fi
 <div created="20200613162604220" modified="20200613162604220" title="$:/config/AutoSave">
 <pre>no</pre>
 </div>
-<div created="20200607040719115" modified="20200607040719937" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/advanced-search">
-<pre>hide</pre>
+<div created="20200607040719115" modified="20200620161535270" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/advanced-search">
+<pre>show</pre>
 </div>
 <div created="20200607035327705" modified="20200607045044001" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/close-all">
 <pre>show</pre>
@@ -727,8 +741,8 @@ fi
 <div created="20200607042414888" modified="20200607042415340" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/print">
 <pre>hide</pre>
 </div>
-<div created="20200607040743480" modified="20200607040745120" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/storyview">
-<pre>show</pre>
+<div created="20200607040743480" modified="20200620161547361" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/storyview">
+<pre>hide</pre>
 </div>
 <div created="20200607040736532" modified="20200607040742648" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/theme">
 <pre>hide</pre>
@@ -738,6 +752,9 @@ fi
 </div>
 <div created="20200607051306981" modified="20200607075549144" title="$:/config/RelinkOnRename">
 <pre>no</pre>
+</div>
+<div created="20200620162053193" modified="20200620162053193" title="$:/config/WikiParserRules/Inline/wikilink">
+<pre>disable</pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="" description="TiddlyWiki5 core" list="readme" name="Core" plugin-priority="0" plugin-type="plugin" title="$:/core" type="application/json" version="5.1.22">
 <pre>{
@@ -10127,7 +10144,7 @@ fi
 <div created="20200607085745512" modified="20200607085746944" title="$:/GitHub/Username">
 <pre>hyrijk</pre>
 </div>
-<div created="20200613163053920" modified="20200613163832593" tags="$:/tags/Stylesheet" title="$:/hidpi-image" type="text/css">
+<div created="20200613163053920" modified="20200620162320631" tags="$:/tags/Stylesheet" title="$:/hidpi-image.css" type="text/css">
 <pre>.tc-tiddler-body img {
     zoom: 50%;
 }</pre>
@@ -10144,6 +10161,27 @@ fi
 </div>
 <div title="$:/isEncrypted">
 <pre>no</pre>
+</div>
+<div created="20200620162850726" modified="20200620164406759" tags="$:/tags/Stylesheet" title="$:/itonnote.css" type="text/css">
+<pre>.tc-tiddler-title {
+ background-color: #fff;
+}
+.tc-titlebar {
+    border-bottom: 1px solid #dfdfdf;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 400;
+}
+
+pre {
+    display: block;
+    overflow-x: auto;
+    padding: .5em;
+    background-color: white;
+    border: none;
+    box-shadow: rgba(15, 15, 15, 0.1) 0px 0px 5px 1px, rgba(15, 15, 15, 0.1) 0px 2px 10px;
+}</pre>
 </div>
 <div created="20200607035209377" modified="20200607035209377" title="$:/language">
 <pre>$:/languages/zh-Hans</pre>
@@ -13881,8 +13919,142 @@ fi
     }
 }</pre>
 </div>
-<div created="20200610142222040" modified="20200620153610140" title="$:/palette">
-<pre>$:/palettes/Vanilla</pre>
+<div created="20200610142222040" modified="20200620162026639" title="$:/palette">
+<pre>$:/palettes/Vanilla2</pre>
+</div>
+<div created="20200620161710607" description="Pale and unobtrusive" modified="20200620162013632" name="Vanilla2" tags="$:/tags/Palette" title="$:/palettes/Vanilla2" type="application/x-tiddler-dictionary">
+<pre>alert-background: #ffe476
+alert-border: #b99e2f
+alert-highlight: #881122
+alert-muted-foreground: #b99e2f
+background: #ffffff
+blockquote-bar: &lt;&lt;colour muted-foreground&gt;&gt;
+button-background: 
+button-foreground: 
+button-border: 
+code-background: #f7f7f9
+code-border: #e1e1e8
+code-foreground: #dd1144
+diff-delete-background: #ffc9c9
+diff-delete-foreground: &lt;&lt;colour foreground&gt;&gt;
+diff-equal-background: 
+diff-equal-foreground: &lt;&lt;colour foreground&gt;&gt;
+diff-insert-background: #aaefad
+diff-insert-foreground: &lt;&lt;colour foreground&gt;&gt;
+diff-invisible-background: 
+diff-invisible-foreground: &lt;&lt;colour muted-foreground&gt;&gt;
+dirty-indicator: #ff0000
+download-background: #34c734
+download-foreground: &lt;&lt;colour background&gt;&gt;
+dragger-background: &lt;&lt;colour foreground&gt;&gt;
+dragger-foreground: &lt;&lt;colour background&gt;&gt;
+dropdown-background: &lt;&lt;colour background&gt;&gt;
+dropdown-border: &lt;&lt;colour muted-foreground&gt;&gt;
+dropdown-tab-background-selected: #fff
+dropdown-tab-background: #ececec
+dropzone-background: rgba(0,200,0,0.7)
+external-link-background-hover: inherit
+external-link-background-visited: inherit
+external-link-background: inherit
+external-link-foreground-hover: inherit
+external-link-foreground-visited: #0000aa
+external-link-foreground: #0000ee
+foreground: #333333
+menubar-background: #fff
+menubar-foreground: #666
+message-background: #ecf2ff
+message-border: #cfd6e6
+message-foreground: #547599
+modal-backdrop: &lt;&lt;colour foreground&gt;&gt;
+modal-background: &lt;&lt;colour background&gt;&gt;
+modal-border: #999999
+modal-footer-background: #f5f5f5
+modal-footer-border: #dddddd
+modal-header-border: #eeeeee
+muted-foreground: #bbb
+notification-background: #ffffdd
+notification-border: #999999
+page-background: #f4f4f4
+pre-background: #f5f5f5
+pre-border: #cccccc
+primary: #e8e0f1
+select-tag-background: 
+select-tag-foreground: 
+sidebar-button-foreground: &lt;&lt;colour foreground&gt;&gt;
+sidebar-controls-foreground-hover: #000000
+sidebar-controls-foreground: #aaaaaa
+sidebar-foreground-shadow: rgba(255,255,255, 0.8)
+sidebar-foreground: #acacac
+sidebar-muted-foreground-hover: #444444
+sidebar-muted-foreground: #c0c0c0
+sidebar-tab-background-selected: #f4f4f4
+sidebar-tab-background: #e0e0e0
+sidebar-tab-border-selected: &lt;&lt;colour tab-border-selected&gt;&gt;
+sidebar-tab-border: &lt;&lt;colour tab-border&gt;&gt;
+sidebar-tab-divider: #e4e4e4
+sidebar-tab-foreground-selected: 
+sidebar-tab-foreground: &lt;&lt;colour tab-foreground&gt;&gt;
+sidebar-tiddler-link-foreground-hover: #444444
+sidebar-tiddler-link-foreground: #999999
+site-title-foreground: &lt;&lt;colour tiddler-title-foreground&gt;&gt;
+static-alert-foreground: #aaaaaa
+tab-background-selected: #ffffff
+tab-background: #d8d8d8
+tab-border-selected: #d8d8d8
+tab-border: #cccccc
+tab-divider: #d8d8d8
+tab-foreground-selected: &lt;&lt;colour tab-foreground&gt;&gt;
+tab-foreground: #666666
+table-border: #dddddd
+table-footer-background: #a8a8a8
+table-header-background: #f0f0f0
+tag-background: #ec6
+tag-foreground: #ffffff
+tiddler-background: &lt;&lt;colour background&gt;&gt;
+tiddler-border: &lt;&lt;colour background&gt;&gt;
+tiddler-controls-foreground-hover: #888888
+tiddler-controls-foreground-selected: #444444
+tiddler-controls-foreground: #cccccc
+tiddler-editor-background: #f8f8f8
+tiddler-editor-border-image: #ffffff
+tiddler-editor-border: #cccccc
+tiddler-editor-fields-even: #e0e8e0
+tiddler-editor-fields-odd: #f0f4f0
+tiddler-info-background: #f8f8f8
+tiddler-info-border: #dddddd
+tiddler-info-tab-background: #f8f8f8
+tiddler-link-background: &lt;&lt;colour background&gt;&gt;
+tiddler-link-foreground: &lt;&lt;colour primary&gt;&gt;
+tiddler-subtitle-foreground: #c0c0c0
+tiddler-title-foreground: #182955
+toolbar-new-button: 
+toolbar-options-button: 
+toolbar-save-button: 
+toolbar-info-button: 
+toolbar-edit-button: 
+toolbar-close-button: 
+toolbar-delete-button: 
+toolbar-cancel-button: 
+toolbar-done-button: 
+untagged-background: #999999
+very-muted-foreground: #888888
+wikilist-background: #e5e5e5
+wikilist-item: #fff
+wikilist-info: #000
+wikilist-title: #666
+wikilist-title-svg: &lt;&lt;colour wikilist-title&gt;&gt;
+wikilist-url: #aaa
+wikilist-button-open: #4fb82b
+wikilist-button-open-hover: green
+wikilist-button-reveal: #5778d8
+wikilist-button-reveal-hover: blue
+wikilist-button-remove: #d85778
+wikilist-button-remove-hover: red
+wikilist-toolbar-background: #d3d3d3
+wikilist-toolbar-foreground: #888
+wikilist-droplink-dragover: rgba(255,192,192,0.5)
+wikilist-button-background: #acacac
+wikilist-button-foreground: #000</pre>
 </div>
 <div author="bimlas" core-version="&gt;=5.1.18" dependents="" description="Locator: Discover and search by context" list="README/README README/macros README/TIPS README/CHANGELOG" plugin-type="plugin" source="https://gitlab.com/bimlas/tw5-locator" title="$:/plugins/bimlas/locator" type="application/json" version="2.0.0">
 <pre>{
@@ -14701,6 +14873,9 @@ fi
 <div created="20200607061127819" modified="20200607082126304" title="$:/SiteTitle">
 <pre>Peiming's Knowledge Base</pre>
 </div>
+<div created="20200620164541478" history="Tags" modified="20200620164543621" opened-fields-filters="" title="$:/state/bimlas/locator/view/context/">
+<pre></pre>
+</div>
 <div created="20200607044105241" modified="20200607044106762" title="$:/state/editpreviewtype">
 <pre>$:/core/ui/EditTemplate/body/preview/output</pre>
 </div>
@@ -14734,8 +14909,11 @@ fi
 <div created="20200607044818575" modified="20200607045141047" title="$:/state/folded/typescript.md">
 <pre>show</pre>
 </div>
-<div created="20200607035539896" modified="20200607035539896" title="$:/state/showeditpreview">
-<pre>yes</pre>
+<div created="20200607035539896" modified="20200620162927745" title="$:/state/showeditpreview">
+<pre>no</pre>
+</div>
+<div created="20200620161402649" modified="20200620162024517" title="$:/state/ShowPaletteEditor">
+<pre>no</pre>
 </div>
 <div created="20200607035500142" modified="20200607083116635" title="$:/state/sidebar">
 <pre>yes</pre>
@@ -14743,8 +14921,8 @@ fi
 <div created="20200607064028393" modified="20200607070246684" title="$:/state/tab--1498284803">
 <pre>$:/core/ui/AdvancedSearch/System</pre>
 </div>
-<div created="20200607035244754" modified="20200620153617884" title="$:/state/tab--1963855381">
-<pre>$:/core/ui/ControlPanel/Palette</pre>
+<div created="20200607035244754" modified="20200620162104481" title="$:/state/tab--1963855381">
+<pre>$:/themes/tiddlywiki/vanilla/themetweaks</pre>
 </div>
 <div created="20200607035343093" modified="20200607082040136" title="$:/state/tab--2112689675">
 <pre>$:/core/ui/ControlPanel/Basics</pre>
@@ -14761,7 +14939,7 @@ fi
 <div created="20200607043855360" modified="20200607044841744" title="$:/state/tab-1163638994">
 <pre>$:/core/ui/MoreSideBar/Plugins/Languages</pre>
 </div>
-<div created="20200607033957495" modified="20200620153608121" title="$:/state/tab-1749438307">
+<div created="20200607033957495" modified="20200620162103595" title="$:/state/tab-1749438307">
 <pre>$:/core/ui/ControlPanel/Appearance</pre>
 </div>
 <div created="20200607083135165" modified="20200613162602674" title="$:/state/tab-2065006209">
@@ -14770,7 +14948,7 @@ fi
 <div created="20200607043853954" modified="20200607075242372" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/All</pre>
 </div>
-<div created="20200607035320825" modified="20200617085804442" title="$:/state/tab/sidebar--595412856">
+<div created="20200607035320825" modified="20200620164731546" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/Open</pre>
 </div>
 <div created="20200607051544172" modified="20200607051711963" title="$:/state/toc/TableOfContents-目录--599274119">
@@ -14782,8 +14960,8 @@ fi
 <div created="20200607075103370" modified="20200607075106129" title="$:/state/toc/TableOfContents-前端--599274119">
 <pre>close</pre>
 </div>
-<div created="20200614104035624" modified="20200615231313764" title="$:/state/toc/TableOfContents-前端-1578220852">
-<pre>close</pre>
+<div created="20200614104035624" modified="20200620163309420" title="$:/state/toc/TableOfContents-前端-1578220852">
+<pre>open</pre>
 </div>
 <div created="20200607081846130" modified="20200607081852973" title="$:/state/toc/TableOfContents-数据库--174201155">
 <pre>close</pre>
@@ -14803,20 +14981,23 @@ fi
 <div created="20200615231304844" modified="20200615231305570" title="$:/state/toc/TableOfContents-ssh-1578220852">
 <pre>close</pre>
 </div>
-<div created="20200615073746191" modified="20200615231312478" title="$:/state/toc/TableOfContents/前端-npm-1578220852">
-<pre>close</pre>
+<div created="20200615073746191" modified="20200620164420905" title="$:/state/toc/TableOfContents/前端-npm-1578220852">
+<pre>open</pre>
+</div>
+<div created="20200620164415505" modified="20200620164415505" title="$:/state/toc/TableOfContents/前端-react-1578220852">
+<pre>open</pre>
 </div>
 <div created="20200607060247349" modified="20200607060247349" title="$:/state/tree/$:/tags/">
 <pre>show</pre>
 </div>
 <div title="$:/status/RequireReloadDueToPluginChange">
-<pre>yes</pre>
+<pre>no</pre>
 </div>
-<div list="Tags" title="$:/StoryList">
+<div created="20200620164645866" list="Tags" modified="20200620164645866" title="$:/StoryList">
 <pre></pre>
 </div>
-<div created="20200607063942744" modified="20200607070244679" title="$:/temp/advancedsearch">
-<pre></pre>
+<div created="20200607063942744" modified="20200620163201786" title="$:/temp/advancedsearch">
+<pre>.css</pre>
 </div>
 <div created="20200607035641995" modified="20200607035641995" title="$:/temp/HidePluginWarning">
 <pre>yes</pre>
@@ -14879,7 +15060,7 @@ fi
     }
 }</pre>
 </div>
-<div created="20200607043129550" modified="20200616103758204" title="$:/temp/NewTagName">
+<div created="20200607043129550" modified="20200620161736315" title="$:/temp/NewTagName">
 <pre></pre>
 </div>
 <div author="Paco Rivière" core-version="&gt;=5.0.0" created="20200607034009050" dependents="" description="Catalan (Spain)" icon="data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22810%22%20height%3D%22540%22%3E%0A%3Crect%20width%3D%22810%22%20height%3D%22540%22%20fill%3D%22%23FCDD09%22%2F%3E%0A%3Cpath%20stroke%3D%22%23DA121A%22%20stroke-width%3D%2260%22%20d%3D%22M0%2C90H810m0%2C120H0m0%2C120H810m0%2C120H0%22%2F%3E%0A%3C%2Fsvg%3E" modified="20200607034009050" name="ca-ES" original-plugin-type="language" original-tags="" original-title="$:/languages/ca-ES" original-type="application/json" requires-reload="no" server-url="https://tiddlywiki.com/library/v5.1.22/index.html" tags="$:/tags/RemoteAssetInfo" title="$:/temp/RemoteAssetInfo/https://tiddlywiki.com/library/v5.1.22/index.html/$:/languages/ca-ES" type="text/vnd.tiddlywiki" version="5.1.22">
@@ -15832,7 +16013,7 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div created="20200607034011159" modified="20200607043212273" title="$:/temp/RemoteAssetSearch/$:/config/OfficialPluginLibrary">
 <pre>sidebar</pre>
 </div>
-<div created="20200607063936409" modified="20200617083517881" title="$:/temp/search">
+<div created="20200607063936409" modified="20200620161701046" title="$:/temp/search">
 <pre></pre>
 </div>
 <div created="20200607035632559" modified="20200607035632559" tags="$:/tags/ServerConnection" title="$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.22/index.html" url="https://tiddlywiki.com/library/v5.1.22/index.html">
@@ -15970,6 +16151,9 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 </div>
 <div created="20200607035315833" modified="20200607035315833" title="$:/themes/tiddlywiki/vanilla/options/sidebarlayout">
 <pre>fluid-fixed</pre>
+</div>
+<div created="20200620162106789" modified="20200620162106789" title="$:/themes/tiddlywiki/vanilla/options/stickytitles">
+<pre>yes</pre>
 </div>
 <div created="20200607040751291" modified="20200607074731252" title="$:/view">
 <pre>classic</pre>
