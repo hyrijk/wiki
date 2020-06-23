@@ -560,6 +560,8 @@ Error message and password prompt
 
 <li>Array 解构忽略前面的元素</li>
 
+<li>Async function in React hooks useEffect</li>
+
 <li>createTaskTiddler</li>
 
 <li>crontab PATH 变量</li>
@@ -14922,7 +14924,7 @@ wikilist-button-foreground: #000</pre>
 <div created="20200607044818575" modified="20200607045141047" title="$:/state/folded/typescript.md">
 <pre>show</pre>
 </div>
-<div created="20200607035539896" modified="20200621022409911" title="$:/state/showeditpreview">
+<div created="20200607035539896" modified="20200623071028661" title="$:/state/showeditpreview">
 <pre>yes</pre>
 </div>
 <div created="20200620161402649" modified="20200620162024517" title="$:/state/ShowPaletteEditor">
@@ -15009,7 +15011,7 @@ wikilist-button-foreground: #000</pre>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div list="Tags" title="$:/StoryList">
+<div created="20200623064142479" list="[[Async function in React hooks useEffect]] Tags" modified="20200623064142479" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200607063942744" modified="20200620163201786" title="$:/temp/advancedsearch">
@@ -15076,7 +15078,7 @@ wikilist-button-foreground: #000</pre>
     }
 }</pre>
 </div>
-<div created="20200607043129550" modified="20200621021845517" title="$:/temp/NewTagName">
+<div created="20200607043129550" modified="20200623071353426" title="$:/temp/NewTagName">
 <pre></pre>
 </div>
 <div author="Paco Rivière" core-version="&gt;=5.0.0" created="20200607034009050" dependents="" description="Catalan (Spain)" icon="data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22810%22%20height%3D%22540%22%3E%0A%3Crect%20width%3D%22810%22%20height%3D%22540%22%20fill%3D%22%23FCDD09%22%2F%3E%0A%3Cpath%20stroke%3D%22%23DA121A%22%20stroke-width%3D%2260%22%20d%3D%22M0%2C90H810m0%2C120H0m0%2C120H810m0%2C120H0%22%2F%3E%0A%3C%2Fsvg%3E" modified="20200607034009050" name="ca-ES" original-plugin-type="language" original-tags="" original-title="$:/languages/ca-ES" original-type="application/json" requires-reload="no" server-url="https://tiddlywiki.com/library/v5.1.22/index.html" tags="$:/tags/RemoteAssetInfo" title="$:/temp/RemoteAssetInfo/https://tiddlywiki.com/library/v5.1.22/index.html/$:/languages/ca-ES" type="text/vnd.tiddlywiki" version="5.1.22">
@@ -16232,6 +16234,35 @@ https://cloud.tencent.com/document/product/876
 ```javascript
 const [ , , platform, scene] = process.argv
 ```</pre>
+</div>
+<div created="20200623070849616" modified="20200623071357502" tags="react" title="Async function in React hooks useEffect">
+<pre>! 错误的写法
+
+原因：useEffect  的第一个参数的返回值应该是一个 cleanup 函数或者undefined。但是 async function 的返回值是一个Promise。
+
+```javascript
+const MyFunctionnalComponent: React.FC = (props) =&gt; {
+  useEffect(async () =&gt; {
+   await loadContent();
+  }, []);
+  return &lt;div&gt;&lt;/div&gt;;
+}
+```
+! 正确的写法
+```javascript
+const MyFunctionnalComponent: React.FC = props =&gt; {
+  useEffect(() =&gt; {
+    // Create an scoped async function in the hook
+    async function anyNameFunction() {
+      await loadContent();
+    }
+    // Execute the created function directly
+    anyNameFunction();
+  }, []);
+return &lt;div&gt;&lt;/div&gt;;
+};
+```
+[[How to use async function in React hooks useEffect (Typescript/JS)?|https://medium.com/javascript-in-plain-english/how-to-use-async-function-in-react-hook-useeffect-typescript-js-6204a788a435]]</pre>
 </div>
 <div created="20200615013828151" modified="20200615014123812" tags="snippet tiddlywiki" title="createTaskTiddler">
 <pre>```
