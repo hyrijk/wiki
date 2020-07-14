@@ -626,6 +626,8 @@ Error message and password prompt
 
 <li>tiddlywiki资源</li>
 
+<li>tsx 文件里面写泛型</li>
+
 <li>typescript</li>
 
 <li>useCallback 与 useMemo</li>
@@ -15053,7 +15055,7 @@ wikilist-button-foreground: #000</pre>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div list="Tags" title="$:/StoryList">
+<div created="20200714082008533" list="[[tsx 文件里面写泛型]] Tags git" modified="20200714082008533" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200607063942744" modified="20200620163201786" title="$:/temp/advancedsearch">
@@ -16804,6 +16806,19 @@ ForwardX11 yes                       # (選填) 啟用回傳 GUI
 <div created="20200621103519453" modified="20200621103708559" tags="tiddlywiki" title="tiddlywiki资源">
 <pre># [[tw-widget-tutorial|https://btheado.github.io/tw-widget-tutorial/]]
 # [[https://onetwo.ren/wiki/#:Index]]</pre>
+</div>
+<div created="20200714104716371" modified="20200714105052402" tags="typescript" title="tsx 文件里面写泛型">
+<pre>在 .tsx 文件里，泛型可能会被当做 jsx 标签
+
+```typescript
+const toArray = &lt;T&gt;(element: T) =&gt; [element]; // Error in .tsx file.
+```
+加 extends 可破
+
+```typescript
+const toArray = &lt;T extends {}&gt;(element: T) =&gt; [element]; // No errors.
+
+```</pre>
 </div>
 <div created="20200607045116145" modified="20200607080132378" tags="前端" title="typescript" type="text/x-markdown">
 <pre># 起步
