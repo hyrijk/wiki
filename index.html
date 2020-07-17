@@ -550,6 +550,8 @@ Error message and password prompt
 
 <li>前端</li>
 
+<li>强制 remounting React 组件</li>
+
 <li>数据库</li>
 
 <li>新建TeleGram机器人</li>
@@ -15059,7 +15061,7 @@ wikilist-button-foreground: #000</pre>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div list="[[Mac 删除描述文件]] Tags" title="$:/StoryList">
+<div list="[[强制 remounting React 组件]] Tags" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200607063942744" modified="20200620163201786" title="$:/temp/advancedsearch">
@@ -15113,11 +15115,11 @@ wikilist-button-foreground: #000</pre>
         },
         &quot;$:/info/browser/screen/width&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/width&quot;,
-            &quot;text&quot;: &quot;1920&quot;
+            &quot;text&quot;: &quot;1792&quot;
         },
         &quot;$:/info/browser/screen/height&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/height&quot;,
-            &quot;text&quot;: &quot;1080&quot;
+            &quot;text&quot;: &quot;1120&quot;
         },
         &quot;$:/info/browser/language&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/language&quot;,
@@ -16236,6 +16238,18 @@ except Exception as e:
 </div>
 <div created="20200607074817422" modified="20200607075054651" tags="TableOfContents" title="前端">
 <pre>&lt;&lt;list-links &quot;[tag[前端]]&quot;&gt;&gt;</pre>
+</div>
+<div created="20200717052005513" modified="20200717052430620" tags="react" title="强制 remounting React 组件">
+<pre>给组件添加 `key` 属性，改变它即可
+
+```javascript
+const App = (props) =&gt; {
+  // primaryKey 改变的时候重新初始化整个组件(unmount -&gt; mount)
+  return &lt;Index key={props.primaryKey} {...props} /&gt;;
+};
+```
+
+[[How to force remounting on React components?|https://stackoverflow.com/questions/35792275/how-to-force-remounting-on-react-components]]</pre>
 </div>
 <div created="20200607075518780" modified="20200607075538881" tags="TableOfContents" title="数据库">
 <pre>&lt;&lt;list-links &quot;[tag[数据库]]&quot;&gt;&gt;</pre>
