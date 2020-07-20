@@ -636,6 +636,8 @@ Error message and password prompt
 
 <li>typescript</li>
 
+<li>Typescript in eventlistener</li>
+
 <li>useCallback 与 useMemo</li>
 
 <li>vim</li>
@@ -15061,7 +15063,7 @@ wikilist-button-foreground: #000</pre>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div list="[[强制 remounting React 组件]] Tags" title="$:/StoryList">
+<div list="Tags" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200607063942744" modified="20200620163201786" title="$:/temp/advancedsearch">
@@ -15115,11 +15117,11 @@ wikilist-button-foreground: #000</pre>
         },
         &quot;$:/info/browser/screen/width&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/width&quot;,
-            &quot;text&quot;: &quot;1792&quot;
+            &quot;text&quot;: &quot;1920&quot;
         },
         &quot;$:/info/browser/screen/height&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/height&quot;,
-            &quot;text&quot;: &quot;1120&quot;
+            &quot;text&quot;: &quot;1080&quot;
         },
         &quot;$:/info/browser/language&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/language&quot;,
@@ -16894,6 +16896,55 @@ $ tsc --noEmit --skipLibCheck
 ```
 
 </pre>
+</div>
+<div created="20200720222740210" modified="20200720222841792" tags="typescript" title="Typescript in eventlistener">
+<pre>```typescript
+interface EventPayload {
+  onPlay: { a: string; b: number };
+  onPause: { a: number; b: string };
+  onEnd: { e: boolean };
+}
+
+interface IEmit {
+  &lt;K extends keyof EventPayload&gt;(key: K, playload: EventPayload[K]): void;
+}
+
+interface ICB&lt;K extends keyof EventPayload&gt; {
+  (playload: EventPayload[K]): void;
+}
+
+interface IAddCallBack {
+  &lt;K extends keyof EventPayload&gt;(key: K, cb: ICB&lt;K&gt;): number;
+}
+
+const emit: IEmit = (k, playload) =&gt; {
+  console.log(k, playload);
+};
+
+let uid = 0;
+const addCallBack: IAddCallBack = (k, cb) =&gt; {
+  console.log(k, cb);
+  uid += 1;
+  return uid;
+};
+
+emit('onPlay', { a: 'string', b: 1 });
+emit('onPause', { a: 1, b: 's' });
+emit('onEnd', { e: false });
+
+addCallBack('onPlay', (payload) =&gt; {
+  console.log(payload.a);
+});
+
+addCallBack('onPause', (payload) =&gt; {
+  console.log(payload.b);
+});
+
+addCallBack('onEnd', (payload) =&gt; {
+  console.log(payload.e);
+});
+
+```</pre>
 </div>
 <div created="20200616103640014" modified="20200616103806701" tags="react" title="useCallback 与 useMemo">
 <pre>`useCallback` 和 `useMemo` 都可缓存函数的引用或值，但是从更细的使用角度来说 `useCallback` 缓存函数的引用，`useMemo` 缓存计算数据的值。</pre>
