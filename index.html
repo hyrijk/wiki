@@ -648,6 +648,8 @@ Error message and password prompt
 
 <li>vim</li>
 
+<li>vscode 关闭光标闪烁</li>
+
 <li>vue</li>
 
 <li>Webpack 打 npm 包关键配置</li>
@@ -14982,7 +14984,7 @@ wikilist-button-foreground: #000</pre>
 <div created="20200607044818575" modified="20200607045141047" title="$:/state/folded/typescript.md">
 <pre>show</pre>
 </div>
-<div created="20200607035539896" modified="20200731134929850" title="$:/state/showeditpreview">
+<div created="20200607035539896" modified="20200828064529218" title="$:/state/showeditpreview">
 <pre>yes</pre>
 </div>
 <div created="20200620161402649" modified="20200620162024517" title="$:/state/ShowPaletteEditor">
@@ -15069,7 +15071,7 @@ wikilist-button-foreground: #000</pre>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div list="Android颜色透明度十六进制对照表 Tags" title="$:/StoryList">
+<div created="20200828064752133" list="[[vscode 关闭光标闪烁]]" modified="20200828064834651" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200607063942744" modified="20200620163201786" title="$:/temp/advancedsearch">
@@ -15091,15 +15093,15 @@ wikilist-button-foreground: #000</pre>
         },
         &quot;$:/info/url/full&quot;: {
             &quot;title&quot;: &quot;$:/info/url/full&quot;,
-            &quot;text&quot;: &quot;https://wiki.peiming.me/&quot;
+            &quot;text&quot;: &quot;https://www.minng.cn/&quot;
         },
         &quot;$:/info/url/host&quot;: {
             &quot;title&quot;: &quot;$:/info/url/host&quot;,
-            &quot;text&quot;: &quot;wiki.peiming.me&quot;
+            &quot;text&quot;: &quot;www.minng.cn&quot;
         },
         &quot;$:/info/url/hostname&quot;: {
             &quot;title&quot;: &quot;$:/info/url/hostname&quot;,
-            &quot;text&quot;: &quot;wiki.peiming.me&quot;
+            &quot;text&quot;: &quot;www.minng.cn&quot;
         },
         &quot;$:/info/url/protocol&quot;: {
             &quot;title&quot;: &quot;$:/info/url/protocol&quot;,
@@ -15119,7 +15121,7 @@ wikilist-button-foreground: #000</pre>
         },
         &quot;$:/info/url/origin&quot;: {
             &quot;title&quot;: &quot;$:/info/url/origin&quot;,
-            &quot;text&quot;: &quot;https://wiki.peiming.me&quot;
+            &quot;text&quot;: &quot;https://www.minng.cn&quot;
         },
         &quot;$:/info/browser/screen/width&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/width&quot;,
@@ -15136,7 +15138,7 @@ wikilist-button-foreground: #000</pre>
     }
 }</pre>
 </div>
-<div created="20200607043129550" modified="20200811032212069" title="$:/temp/NewTagName">
+<div created="20200607043129550" modified="20200828064642254" title="$:/temp/NewTagName">
 <pre></pre>
 </div>
 <div author="Paco Rivière" core-version="&gt;=5.0.0" created="20200607034009050" dependents="" description="Catalan (Spain)" icon="data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22810%22%20height%3D%22540%22%3E%0A%3Crect%20width%3D%22810%22%20height%3D%22540%22%20fill%3D%22%23FCDD09%22%2F%3E%0A%3Cpath%20stroke%3D%22%23DA121A%22%20stroke-width%3D%2260%22%20d%3D%22M0%2C90H810m0%2C120H0m0%2C120H810m0%2C120H0%22%2F%3E%0A%3C%2Fsvg%3E" modified="20200607034009050" name="ca-ES" original-plugin-type="language" original-tags="" original-title="$:/languages/ca-ES" original-type="application/json" requires-reload="no" server-url="https://tiddlywiki.com/library/v5.1.22/index.html" tags="$:/tags/RemoteAssetInfo" title="$:/temp/RemoteAssetInfo/https://tiddlywiki.com/library/v5.1.22/index.html/$:/languages/ca-ES" type="text/vnd.tiddlywiki" version="5.1.22">
@@ -17018,6 +17020,15 @@ https://harttle.land/2016/07/25/vim-registers.html
 ### 删除不覆制
 
 默认 `d` 删除操作会将删除掉的内容覆制到剪贴板。指定黑洞寄存器`&quot;_`，即`&quot;_dd`</pre>
+</div>
+<div created="20200828064534847" modified="20200828064734680" tags="vscode" title="vscode 关闭光标闪烁">
+<pre>修改配置
+
+```json
+{
+  &quot;editor.cursorBlinking&quot;: &quot;solid&quot;
+}
+```</pre>
 </div>
 <div created="20200607044943312" modified="20200607080258698" tags="前端" title="vue" type="text/x-markdown">
 <pre># sync props
