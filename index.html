@@ -604,6 +604,8 @@ Error message and password prompt
 
 <li>Mac 删除描述文件</li>
 
+<li>map and join react components</li>
+
 <li>moduleResolution</li>
 
 <li>mongodb</li>
@@ -15075,7 +15077,7 @@ wikilist-button-foreground: #000</pre>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div list="jsx-no-target-blank Tags" title="$:/StoryList">
+<div list="[[map and join react components]] Tags" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200607063942744" modified="20200620163201786" title="$:/temp/advancedsearch">
@@ -16608,6 +16610,23 @@ Project.prototype.assign = function({ name, department }) {
 
 ```bash
 sudo profiles -D # 删除所有配置文件
+```</pre>
+</div>
+<div created="20201117062756920" modified="20201117063003864" tags="" title="map and join react components">
+<pre>https://stackoverflow.com/questions/34034038/how-to-render-react-components-by-using-map-and-join
+
+用逗号链接各项，但不要最后的逗号：
+
+```
+class List extends React.Component {
+  render() {
+     &lt;div&gt;
+        {this.props.data
+          .map(t =&gt; &lt;span&gt;{t}&lt;/span&gt;)
+          .reduce((prev, curr) =&gt; [prev, ', ', curr])}
+     &lt;/div&gt;
+  }
+}
 ```</pre>
 </div>
 <div created="20200731134519206" modified="20200731135607484" tags="Typescript" title="moduleResolution" type="text/vnd.tiddlywiki">
